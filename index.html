@@ -2,2445 +2,2245 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baliraya Beach Resort - Your Paradise in Davao Oriental</title>
-    <meta name="description"
-        content="Exclusive beach house with white sand and calm waters in Mati City, Davao Oriental. Near Oak Island, Waniban Island, and Pujada Island.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Navigation Styles */
-        .top-bar {
-            background-color: #0284c7;
-            color: white;
-            padding: 0.5rem 0;
-            font-size: 0.875rem;
-        }
-
-        .top-bar-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .top-bar-left {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .top-bar a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .top-bar a:hover {
-            color: #bae6fd;
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logout-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 1rem;
-            cursor: pointer;
-            font-size: 0.875rem;
-        }
-
-        .logout-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        nav {
-            background: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 5rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .logo-baliraya {
-            color: #0284c7;
-        }
-
-        .logo-beach {
-            color: #1f2937;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #4b5563;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #0284c7;
-            font-weight: 600;
-        }
-
-        .btn-book {
-            background-color: #0284c7;
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 9999px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        .btn-book:hover {
-            background-color: #0369a1;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .mobile-menu {
-            display: none;
-            background: white;
-            border-top: 1px solid #e5e7eb;
-            padding: 1rem;
-        }
-
-        .mobile-menu.active {
-            display: block;
-        }
-
-        .mobile-menu a {
-            display: block;
-            padding: 0.5rem 0;
-            color: #4b5563;
-            text-decoration: none;
-        }
-
-        .mobile-menu a:hover,
-        .mobile-menu a.active {
-            color: #0284c7;
-            font-weight: 600;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -2;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: -1;
-        }
-
-        .hero-content {
-            max-width: 56rem;
-            padding: 1rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: bold;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .hero-rating {
-            margin-top: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .stars {
-            color: #fbbf24;
-            font-size: 1.5rem;
-        }
-
-        /* Page Header */
-        .page-header {
-            position: relative;
-            height: 24rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            background-color: #0284c7;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Section */
-        section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: #1f2937;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.25rem;
-            color: #6b7280;
-            margin-bottom: 4rem;
-        }
-
-        /* Grid */
-        .grid {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-
-        .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
-
-        .grid-4 {
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        }
-
-        /* Cards */
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
-        }
-
-        .card:hover {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .icon-box {
-            width: 3rem;
-            height: 3rem;
-            background-color: #dbeafe;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            color: #0284c7;
-            font-size: 1.5rem;
-        }
-
-        /* Image Gallery */
-        .gallery-item {
-            position: relative;
-            height: 20rem;
-            overflow: hidden;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            group: hover;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-            padding: 1.5rem;
-            color: white;
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-
-        /* Background Colors */
-        .bg-gray {
-            background-color: #f9fafb;
-        }
-
-        .bg-sky {
-            background-color: #0284c7;
-            color: white;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 9999px;
-            font-size: 1.125rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: #0284c7;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #0369a1;
-        }
-
-        .btn-secondary {
-            background-color: white;
-            color: #1f2937;
-        }
-
-        .btn-secondary:hover {
-            background-color: #f3f4f6;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-outline:hover {
-            background-color: white;
-            color: #0284c7;
-        }
-
-        /* Room Cards */
-        .room-card {
-            background: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: box-shadow 0.3s;
-        }
-
-        .room-card:hover {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .room-image {
-            width: 100%;
-            height: 16rem;
-            object-fit: cover;
-        }
-
-        .room-content {
-            padding: 1.5rem;
-        }
-
-        .room-features {
-            list-style: none;
-            margin: 1rem 0;
-        }
-
-        .room-features li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #4b5563;
-        }
-
-        .check-icon {
-            color: #10b981;
-        }
-
-        /* Form Styles */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #374151;
-        }
-
-        .form-input,
-        .form-textarea,
-        select {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid #d1d5db;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: #0284c7;
-            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
-        }
-
-        .form-textarea {
-            resize: none;
-        }
-
-        /* Contact Info */
-        .contact-item {
-            display: flex;
-            gap: 1rem;
-            align-items: start;
-            margin-bottom: 2rem;
-        }
-
-        .contact-icon {
-            width: 3rem;
-            height: 3rem;
-            background-color: #dbeafe;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: #0284c7;
-            font-size: 1.5rem;
-        }
-
-        /* Map */
-        .map-container {
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            height: 24rem;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #111827;
-            color: white;
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-title {
-            color: #38bdf8;
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        footer a {
-            color: #d1d5db;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: #38bdf8;
-        }
-
-        footer ul {
-            list-style: none;
-        }
-
-        footer li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #374151;
-            padding-top: 2rem;
-            text-align: center;
-            color: #9ca3af;
-        }
-
-        /* Stats */
-        .stat-box {
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #1f2937;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #6b7280;
-        }
-
-        /* Reviews */
-        .review-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .review-stars {
-            color: #fbbf24;
-            margin-bottom: 1rem;
-        }
-
-        .review-text {
-            font-size: 1.125rem;
-            color: #4b5563;
-            margin-bottom: 1rem;
-        }
-
-        .review-author {
-            font-weight: 600;
-            color: #1f2937;
-        }
-
-        .review-date {
-            color: #6b7280;
-            font-size: 0.875rem;
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
-            object-fit: contain;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            width: 3rem;
-            height: 3rem;
-        }
-
-        /* Auth Forms */
-        .auth-container {
-            max-width: 450px;
-            margin: 0 auto;
-        }
-
-        .auth-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .auth-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .auth-header h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #1f2937;
-            margin-bottom: 0.5rem;
-        }
-
-        .auth-toggle {
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-
-        .auth-toggle a {
-            color: #0284c7;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .auth-toggle a:hover {
-            text-decoration: underline;
-        }
-
-        /* Booking Receipt */
-        .receipt {
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 2px solid #10b981;
-        }
-
-        .receipt-header {
-            text-align: center;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .receipt-success {
-            background: #d1fae5;
-            color: #065f46;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .receipt-details {
-            margin: 1.5rem 0;
-        }
-
-        .receipt-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .receipt-row:last-child {
-            border-bottom: none;
-            font-weight: 600;
-            font-size: 1.125rem;
-        }
-
-        /* Utility Classes */
-        .text-center {
-            text-align: center;
-        }
-
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-
-        .mb-6 {
-            margin-bottom: 1.5rem;
-        }
-
-        .mt-4 {
-            margin-top: 1rem;
-        }
-
-        .mt-8 {
-            margin-top: 2rem;
-        }
-
-        .alert {
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .alert-success {
-            background-color: #d1fae5;
-            color: #065f46;
-            border: 1px solid #10b981;
-        }
-
-        .alert-info {
-            background-color: #dbeafe;
-            color: #1e40af;
-            border: 1px solid #3b82f6;
-        }
-
-        .alert-error {
-            background-color: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #ef4444;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-        }
-
-        /* Room Browse Cards */
-        .room-browse-card {
-            background: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .room-browse-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .room-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #0284c7;
-        }
-
-        .availability-badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-
-        .available {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .limited {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        /* My Bookings */
-        .booking-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-left: 4px solid #0284c7;
-        }
-
-        .booking-status {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-
-        .status-confirmed {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .status-pending {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.125rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .top-bar-left {
-                font-size: 0.75rem;
-            }
-
-            .grid-4 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 640px) {
-            .top-bar-left a span {
-                display: none;
-            }
-
-            .grid-4 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Page transition */
-        .page {
-            display: none;
-        }
-
-        .page.active {
-            display: block;
-            animation: fadeIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baliraya Beach Resort — Trade Deadlines for Shorelines | Mati, Davao Oriental</title>
+  <meta name="description"
+    content="A Bali-inspired exclusive beach resort on the pristine white sand shores of Lawigan, Mati City, Davao Oriental. Private, romantic, and unforgettable." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* ══════════════ VARIABLES ══════════════ */
+    :root {
+      --cream: #faf5ec;
+      --sand-lt: #f0e6d4;
+      --sand: #d4b896;
+      --teal-dk: #0b3a3a;
+      --teal-md: #1a5757;
+      --teal-lt: #2d7070;
+      --sage: #4a7c6b;
+      --gold: #c49a4c;
+      --gold-lt: #ddb96a;
+      --coral: #c8614a;
+      --dark: #1a120a;
+      --body: #3a2e22;
+      --muted: #7a6a5a;
+      --white: #ffffff;
+    }
+
+    /* ══════════════ RESET ══════════════ */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      color: var(--body);
+      background: var(--cream);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    ::selection {
+      background: var(--teal-dk);
+      color: #fff
+    }
+
+    ::-webkit-scrollbar {
+      width: 7px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--cream)
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--teal-dk);
+      border-radius: 4px
+    }
+
+    /* ══════════════ NAV ══════════════ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      transition: background .5s, box-shadow .5s, backdrop-filter .5s
+    }
+
+    .nav.on {
+      background: rgba(250, 245, 236, .96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(196, 154, 76, .18)
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.38rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      color: #fff;
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      transition: color .5s
+    }
+
+    .nav-logo .sc {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 1.05rem;
+      color: var(--gold-lt)
+    }
+
+    .nav.on .nav-logo {
+      color: var(--teal-dk)
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.6rem;
+      list-style: none
+    }
+
+    .nav-links a {
+      font-size: .68rem;
+      font-weight: 400;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .82);
+      transition: color .3s;
+      position: relative
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gold-lt);
+      transform: scaleX(0);
+      transition: transform .3s;
+      transform-origin: left
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-lt)
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1)
+    }
+
+    .nav.on .nav-links a {
+      color: var(--teal-dk)
+    }
+
+    .nav.on .nav-links a:hover {
+      color: var(--gold)
+    }
+
+    .nav-cta {
+      padding: 9px 22px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      border-radius: 30px;
+      font-weight: 500 !important;
+      letter-spacing: .14em
+    }
+
+    .nav-cta::after {
+      display: none !important
+    }
+
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      border-color: var(--gold) !important;
+      color: #fff !important
+    }
+
+    .nav.on .nav-cta {
+      border-color: var(--teal-dk) !important
+    }
+
+    .nav.on .nav-cta:hover {
+      background: var(--teal-dk) !important;
+      color: #fff !important;
+      border-color: var(--teal-dk) !important
+    }
+
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: background .4s
+    }
+
+    .nav.on .nav-burger span {
+      background: var(--teal-dk)
+    }
+
+    /* ══════════════ MOBILE MENU ══════════════ */
+    .mob {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(11, 58, 58, .97);
+      backdrop-filter: blur(8px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem
+    }
+
+    .mob.open {
+      display: flex
+    }
+
+    .mob a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .85);
+      transition: color .3s
+    }
+
+    .mob a:hover {
+      color: var(--gold-lt)
+    }
+
+    .mob-x {
+      position: absolute;
+      top: 1.8rem;
+      right: 2rem;
+      font-size: 2rem;
+      color: rgba(255, 255, 255, .5);
+      cursor: pointer;
+      line-height: 1;
+      transition: color .3s
+    }
+
+    .mob-x:hover {
+      color: #fff
+    }
+
+    /* ══════════════ HERO ══════════════ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 120px 5vw 100px
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(170deg, #041f20 0%, #082f30 18%, #0e4545 38%, #186060 58%, #2a8080 78%, #3a9490 92%, #1a5050 100%);
+      background-size: 200% 200%;
+      animation: hbg 20s ease-in-out infinite
+    }
+
+    @keyframes hbg {
+
+      0%,
+      100% {
+        background-position: 0 0
+      }
+
+      50% {
+        background-position: 100% 100%
+      }
+    }
+
+    .hero-ov {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 18% 82%, rgba(196, 154, 76, .2) 0%, transparent 55%), radial-gradient(ellipse 55% 45% at 82% 20%, rgba(58, 148, 144, .22) 0%, transparent 55%), radial-gradient(ellipse 100% 40% at 50% 108%, rgba(4, 28, 28, .9) 0%, transparent 58%), linear-gradient(to top, rgba(4, 20, 20, .6) 0%, transparent 50%)
+    }
+
+    .hero-ptcls {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden
+    }
+
+    .ptcl {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      animation: pfloat var(--d, 9s) ease-in-out var(--dl, 0s) infinite
+    }
+
+    @keyframes pfloat {
+      0% {
+        opacity: 0;
+        transform: translateY(0) scale(.5)
+      }
+
+      20% {
+        opacity: 1
+      }
+
+      80% {
+        opacity: .4
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(-130px) scale(1.3)
+      }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 900px
+    }
+
+    .hero-pre {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 2.1rem;
+      color: var(--gold-lt);
+      margin-bottom: 1.1rem;
+      opacity: 0;
+      animation: rise 1.2s cubic-bezier(.25, .46, .45, .94) .3s forwards
+    }
+
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.4rem, 9vw, 7rem);
+      font-weight: 300;
+      line-height: .95;
+      color: #fff;
+      margin-bottom: 1.7rem;
+      letter-spacing: -.01em;
+      opacity: 0;
+      animation: rise 1.2s cubic-bezier(.25, .46, .45, .94) .6s forwards
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--gold-lt)
+    }
+
+    .hero-sub {
+      font-size: clamp(.9rem, 1.8vw, 1.06rem);
+      font-weight: 300;
+      line-height: 1.95;
+      color: rgba(255, 255, 255, .78);
+      max-width: 600px;
+      margin: 0 auto 2.6rem;
+      opacity: 0;
+      animation: rise 1.2s cubic-bezier(.25, .46, .45, .94) .9s forwards
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: rise 1.2s cubic-bezier(.25, .46, .45, .94) 1.2s forwards
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(26px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: 'Jost', sans-serif;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      padding: 18px 46px;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 60px;
+      border: 2px solid var(--gold);
+      transition: all .4s;
+      white-space: nowrap
+    }
+
+    .btn-gold:hover {
+      background: transparent;
+      color: #fff;
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(196, 154, 76, .45)
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: 'Jost', sans-serif;
+      font-size: .7rem;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      background: transparent;
+      color: rgba(255, 255, 255, .75);
+      border-radius: 60px;
+      border: 1px solid rgba(255, 255, 255, .3);
+      transition: all .4s;
+      white-space: nowrap
+    }
+
+    .btn-ghost:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, .7);
+      transform: translateY(-4px)
+    }
+
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3.2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      opacity: 0;
+      animation: rise 1.2s .25, .46, .45, .94) 1.5s forwards;
+      animation: rise 1.2s cubic-bezier(.25, .46, .45, .94) 1.5s forwards
+    }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 300;
+      color: var(--gold-lt);
+      display: block;
+      line-height: 1
+    }
+
+    .stat-lbl {
+      font-size: .58rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .45);
+      margin-top: 4px;
+      display: block
+    }
+
+    .stat-div {
+      width: 1px;
+      height: 40px;
+      background: rgba(255, 255, 255, .12)
+    }
+
+    .hero-wave {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      line-height: 0
+    }
+
+    /* ══════════════ SHARED ══════════════ */
+    .sec {
+      padding: 110px 0;
+      position: relative
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 5vw
+    }
+
+    .eyebrow {
+      font-size: .64rem;
+      font-weight: 500;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: .85rem
+    }
+
+    .eyebrow--lt {
+      color: var(--gold-lt)
+    }
+
+    .sec-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.3rem, 5vw, 3.9rem);
+      font-weight: 300;
+      line-height: 1.08;
+      color: var(--teal-dk)
+    }
+
+    .sec-title em {
+      font-style: italic;
+      color: var(--coral)
+    }
+
+    .sec-title--lt {
+      color: #fff
+    }
+
+    .sec-title--lt em {
+      color: var(--gold-lt)
+    }
+
+    .sec-sub {
+      font-size: 1.02rem;
+      line-height: 1.92;
+      color: var(--muted)
+    }
+
+    .sec-sub--lt {
+      color: rgba(255, 255, 255, .65)
+    }
+
+    .tc {
+      text-align: center
+    }
+
+    .tc .sec-sub {
+      margin: 0 auto
+    }
+
+    .wave-sep {
+      display: block;
+      line-height: 0;
+      overflow: hidden;
+      height: 80px
+    }
+
+    .wave-sep svg {
+      display: block;
+      width: 100%;
+      height: 100%
+    }
+
+    /* ══════════════ STORY ══════════════ */
+    .story {
+      background: var(--cream)
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5.5rem;
+      align-items: center
+    }
+
+    .story-text .sec-title {
+      margin-bottom: 1.9rem
+    }
+
+    .story-text p {
+      font-size: .99rem;
+      line-height: 1.97;
+      color: #5a4a3a;
+      margin-bottom: 1.35rem
+    }
+
+    .story-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--teal-dk);
+      line-height: 1.4;
+      padding-left: 1.7rem;
+      border-left: 3px solid var(--gold);
+      margin: 2.4rem 0
+    }
+
+    .story-vis {
+      position: relative
+    }
+
+    .story-card {
+      aspect-ratio: 4/5;
+      border-radius: 20px;
+      overflow: hidden;
+      background: linear-gradient(142deg, #0e5a5a 0%, #062d2d 52%, #0a1e1e 100%);
+      box-shadow: 0 40px 100px rgba(11, 58, 58, .32);
+      position: relative
+    }
+
+    .story-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% 15%, rgba(196, 154, 76, .22) 0%, transparent 55%), radial-gradient(ellipse 60% 60% at 10% 78%, rgba(200, 97, 74, .18) 0%, transparent 55%), radial-gradient(ellipse 70% 40% at 92% 82%, rgba(74, 153, 144, .2) 0%, transparent 55%)
+    }
+
+    .story-card-bot {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.4rem;
+      background: linear-gradient(to top, rgba(4, 18, 18, .92) 0%, transparent 52%)
+    }
+
+    .story-card-bot .lbl {
+      font-size: .6rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: .45rem;
+      display: block
+    }
+
+    .story-card-bot h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.95rem;
+      font-weight: 300;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.2
+    }
+
+    .story-badge {
+      position: absolute;
+      top: -1.4rem;
+      right: -1.4rem;
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      background: var(--cream);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, .14);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px
+    }
+
+    .story-badge .s-stars {
+      font-size: .62rem;
+      letter-spacing: 2px;
+      color: var(--gold)
+    }
+
+    .story-badge .s-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.7rem;
+      font-weight: 400;
+      color: var(--teal-dk);
+      line-height: 1
+    }
+
+    .story-badge .s-lbl {
+      font-size: .52rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .story-float {
+      position: absolute;
+      bottom: -1.8rem;
+      left: -1.8rem;
+      background: var(--gold);
+      border-radius: 14px;
+      padding: 1.1rem 1.4rem;
+      color: #fff;
+      width: 196px;
+      box-shadow: 0 12px 40px rgba(196, 154, 76, .38)
+    }
+
+    .story-float .sf-icon {
+      font-size: 1.3rem;
+      margin-bottom: .35rem;
+      display: block
+    }
+
+    .story-float .sf-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: .15rem
+    }
+
+    .story-float .sf-sub {
+      font-size: .65rem;
+      letter-spacing: .08em;
+      opacity: .82
+    }
+
+    /* ══════════════ AMENITIES ══════════════ */
+    .amenities {
+      background: var(--teal-dk)
+    }
+
+    .am-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.35rem;
+      margin-top: 3.4rem
+    }
+
+    .ac {
+      background: rgba(255, 255, 255, .056);
+      border: 1px solid rgba(255, 255, 255, .09);
+      border-radius: 18px;
+      padding: 2.35rem;
+      transition: all .4s;
+      position: relative;
+      overflow: hidden
+    }
+
+    .ac::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background: linear-gradient(135deg, rgba(196, 154, 76, .08) 0%, transparent 58%);
+      transition: opacity .4s;
+      pointer-events: none
+    }
+
+    .ac:hover {
+      background: rgba(255, 255, 255, .09);
+      border-color: rgba(196, 154, 76, .28);
+      transform: translateY(-6px)
+    }
+
+    .ac:hover::before {
+      opacity: 1
+    }
+
+    .ac-8 {
+      grid-column: span 8
+    }
+
+    .ac-4 {
+      grid-column: span 4
+    }
+
+    .ac-6 {
+      grid-column: span 6
+    }
+
+    .ac-12 {
+      grid-column: span 12
+    }
+
+    .ac-icon {
+      font-size: 2.1rem;
+      margin-bottom: 1.1rem;
+      display: block
+    }
+
+    .ac-tag {
+      font-size: .57rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: .45rem
+    }
+
+    .ac-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.85rem;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: .85rem;
+      line-height: 1.15
+    }
+
+    .ac-body {
+      font-size: .89rem;
+      line-height: 1.87;
+      color: rgba(255, 255, 255, .62)
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem
+    }
+
+    .chip {
+      font-size: .71rem;
+      padding: 8px 17px;
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      color: rgba(255, 255, 255, .7);
+      transition: all .3s;
+      cursor: default
+    }
+
+    .chip:hover {
+      border-color: var(--gold);
+      color: var(--gold)
+    }
+
+    .chip-u {
+      border-color: rgba(74, 124, 107, .4);
+      color: rgba(255, 255, 255, .54);
+      font-size: .67rem
+    }
+
+    .chip-u:hover {
+      border-color: var(--sage);
+      color: var(--sage)
+    }
+
+    /* ══════════════ EXPERIENCES ══════════════ */
+    .experiences {
+      background: var(--sand-lt)
+    }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.35rem;
+      margin-top: 3.4rem
+    }
+
+    .ec {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2.35rem;
+      border: 1px solid rgba(0, 0, 0, .04);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .04);
+      transition: all .4s
+    }
+
+    .ec:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 64px rgba(11, 58, 58, .11)
+    }
+
+    .ec-wide {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.9rem;
+      align-items: start
+    }
+
+    .ec-emoji {
+      font-size: 2.9rem;
+      display: block;
+      flex-shrink: 0
+    }
+
+    .ec-num {
+      font-size: .58rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: .38rem
+    }
+
+    .ec h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.48rem;
+      font-weight: 400;
+      color: var(--teal-dk);
+      margin-bottom: .7rem;
+      line-height: 1.2
+    }
+
+    .ec p {
+      font-size: .89rem;
+      line-height: 1.9;
+      color: #6a5a4a
+    }
+
+    /* ══════════════ OFFER BANNER ══════════════ */
+    .offer {
+      background: linear-gradient(135deg, #c8614a 0%, #a84030 100%);
+      padding: 88px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .offer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 120%, rgba(255, 255, 255, .08) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 8% 18%, rgba(255, 255, 255, .05) 0%, transparent 50%)
+    }
+
+    .offer-big {
+      position: absolute;
+      right: 4vw;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(7rem, 18vw, 16rem);
+      font-weight: 300;
+      line-height: .9;
+      color: rgba(255, 255, 255, .08);
+      pointer-events: none;
+      user-select: none
+    }
+
+    .offer-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    .offer-pill {
+      display: inline-block;
+      font-size: .63rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .85);
+      background: rgba(255, 255, 255, .14);
+      padding: 7px 22px;
+      border-radius: 40px;
+      margin-bottom: 1.4rem
+    }
+
+    .offer h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.3rem, 5.5vw, 4.5rem);
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 1rem
+    }
+
+    .offer p {
+      font-size: 1.04rem;
+      line-height: 1.82;
+      color: rgba(255, 255, 255, .82);
+      max-width: 476px;
+      margin: 0 auto 2.4rem
+    }
+
+    .btn-white {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 17px 44px;
+      background: #fff;
+      color: var(--coral);
+      border-radius: 60px;
+      border: 2px solid #fff;
+      transition: all .4s
+    }
+
+    .btn-white:hover {
+      background: transparent;
+      color: #fff;
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(0, 0, 0, .2)
+    }
+
+    /* ══════════════ TESTIMONIALS ══════════════ */
+    .testimonials {
+      background: var(--cream)
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.35rem;
+      margin-top: 3.4rem
+    }
+
+    .tc-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2.45rem;
+      border: 1px solid var(--sand-lt);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .04);
+      position: relative;
+      transition: all .4s
+    }
+
+    .tc-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(11, 58, 58, .08)
+    }
+
+    .tc-card.feat {
+      background: var(--teal-dk);
+      border-color: transparent
+    }
+
+    .tc-stars {
+      display: block;
+      font-size: .88rem;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 1.15rem
+    }
+
+    .tc-card.feat .tc-stars {
+      color: var(--gold-lt)
+    }
+
+    .tc-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.27rem;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.66;
+      color: var(--dark);
+      margin-bottom: 1.75rem
+    }
+
+    .tc-card.feat .tc-quote {
+      color: rgba(255, 255, 255, .9)
+    }
+
+    .tc-author {
+      display: flex;
+      align-items: center;
+      gap: .82rem
+    }
+
+    .tc-av {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--sand-lt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--teal-dk);
+      flex-shrink: 0
+    }
+
+    .tc-card.feat .tc-av {
+      background: rgba(255, 255, 255, .12);
+      color: #fff
+    }
+
+    .tc-name {
+      font-weight: 500;
+      font-size: .86rem;
+      color: var(--dark);
+      display: block
+    }
+
+    .tc-card.feat .tc-name {
+      color: #fff
+    }
+
+    .tc-meta {
+      font-size: .7rem;
+      color: #9a8a7a;
+      margin-top: 2px
+    }
+
+    .tc-card.feat .tc-meta {
+      color: rgba(255, 255, 255, .5)
+    }
+
+    .tc-ver {
+      position: absolute;
+      top: 1.4rem;
+      right: 1.4rem;
+      font-size: .57rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      background: rgba(74, 124, 107, .1);
+      color: var(--sage);
+      padding: 4px 10px;
+      border-radius: 20px
+    }
+
+    .tc-card.feat .tc-ver {
+      background: rgba(255, 255, 255, .1);
+      color: rgba(255, 255, 255, .6)
+    }
+
+    /* ══════════════ RATES ══════════════ */
+    .rates {
+      background: var(--sand-lt)
+    }
+
+    .rate-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.35rem;
+      margin-top: 3.4rem
+    }
+
+    .rc {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2.7rem;
+      border: 1px solid var(--sand);
+      transition: all .4s
+    }
+
+    .rc:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .07)
+    }
+
+    .rc.feat {
+      background: var(--teal-dk);
+      border-color: transparent;
+      position: relative
+    }
+
+    .rc-badge {
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: #fff;
+      font-size: .6rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 20px;
+      white-space: nowrap
+    }
+
+    .rc-type {
+      font-size: .6rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: .72rem
+    }
+
+    .rc.feat .rc-type {
+      color: var(--gold-lt)
+    }
+
+    .rc-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.95rem;
+      font-weight: 400;
+      color: var(--teal-dk);
+      margin-bottom: .45rem
+    }
+
+    .rc.feat .rc-title {
+      color: #fff
+    }
+
+    .rc-sub {
+      font-size: .87rem;
+      color: var(--muted);
+      line-height: 1.62;
+      margin-bottom: 1.85rem
+    }
+
+    .rc.feat .rc-sub {
+      color: rgba(255, 255, 255, .6)
+    }
+
+    .rc-feats {
+      list-style: none;
+      margin-bottom: 2.4rem
+    }
+
+    .rc-feats li {
+      font-size: .87rem;
+      padding: .62rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, .052);
+      display: flex;
+      align-items: center;
+      gap: .72rem;
+      color: #5a4a3a
+    }
+
+    .rc.feat .rc-feats li {
+      color: rgba(255, 255, 255, .74);
+      border-bottom-color: rgba(255, 255, 255, .08)
+    }
+
+    .rc-check {
+      color: var(--sage);
+      font-size: .95rem
+    }
+
+    .rc.feat .rc-check {
+      color: var(--gold-lt)
+    }
+
+    .btn-teal {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: .71rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 15px;
+      background: var(--teal-dk);
+      color: #fff;
+      border-radius: 60px;
+      border: 2px solid var(--teal-dk);
+      text-align: center;
+      transition: all .35s
+    }
+
+    .btn-teal:hover {
+      background: transparent;
+      color: var(--teal-dk);
+      transform: translateY(-3px)
+    }
+
+    .btn-ol-lt {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: .71rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 15px;
+      background: transparent;
+      color: #fff;
+      border-radius: 60px;
+      border: 2px solid rgba(255, 255, 255, .38);
+      text-align: center;
+      transition: all .35s
+    }
+
+    .btn-ol-lt:hover {
+      background: rgba(255, 255, 255, .1);
+      border-color: #fff;
+      transform: translateY(-3px)
+    }
+
+    /* ══════════════ BOOKING CTA ══════════════ */
+    .book-cta {
+      background: var(--teal-dk);
+      padding: 118px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .book-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 65% at 50% -8%, rgba(196, 154, 76, .12) 0%, transparent 58%), radial-gradient(ellipse 50% 50% at 0% 100%, rgba(200, 97, 74, .1) 0%, transparent 55%), radial-gradient(ellipse 40% 40% at 100% 50%, rgba(74, 124, 107, .1) 0%, transparent 55%)
+    }
+
+    .book-cta-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    .book-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 1.15rem;
+      line-height: 1.05
+    }
+
+    .book-cta h2 em {
+      font-style: italic;
+      color: var(--gold-lt)
+    }
+
+    .book-cta p {
+      font-size: 1.04rem;
+      line-height: 1.87;
+      color: rgba(255, 255, 255, .7);
+      max-width: 500px;
+      margin: 0 auto 3.3rem
+    }
+
+    .contact-cards {
+      display: flex;
+      justify-content: center;
+      gap: 1.15rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.8rem
+    }
+
+    .cc {
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-radius: 16px;
+      padding: 1.75rem 2.3rem;
+      min-width: 198px;
+      text-align: center;
+      transition: all .4s
+    }
+
+    .cc:hover {
+      background: rgba(255, 255, 255, .13);
+      border-color: var(--gold);
+      transform: translateY(-6px)
+    }
+
+    .cc-icon {
+      font-size: 1.7rem;
+      display: block;
+      margin-bottom: .55rem
+    }
+
+    .cc-lbl {
+      font-size: .58rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: .3rem
+    }
+
+    .cc-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.22rem;
+      color: #fff;
+      font-weight: 400
+    }
+
+    /* ══════════════ FOOTER ══════════════ */
+    footer {
+      background: #051616;
+      padding: 68px 0 30px
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr;
+      gap: 3.8rem;
+      padding-bottom: 2.8rem;
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+      margin-bottom: 2rem
+    }
+
+    .foot-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      color: #fff;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: .3rem
+    }
+
+    .foot-logo .sc {
+      font-family: 'Pinyon Script', cursive;
+      color: var(--gold-lt)
+    }
+
+    .foot-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .92rem;
+      color: rgba(255, 255, 255, .34);
+      margin-bottom: 1.4rem
+    }
+
+    .foot-brand p {
+      font-size: .82rem;
+      line-height: 1.88;
+      color: rgba(255, 255, 255, .37)
+    }
+
+    .foot-col h4 {
+      font-size: .6rem;
+      font-weight: 500;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.4rem
+    }
+
+    .foot-col ul {
+      list-style: none
+    }
+
+    .foot-col ul li {
+      margin-bottom: .75rem
+    }
+
+    .foot-col ul li a {
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .44);
+      transition: color .3s
+    }
+
+    .foot-col ul li a:hover {
+      color: #fff
+    }
+
+    .f-contact {
+      display: flex;
+      gap: .6rem;
+      align-items: flex-start;
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .44);
+      line-height: 1.62;
+      margin-bottom: .8rem
+    }
+
+    .f-contact .ico {
+      color: var(--gold);
+      flex-shrink: 0
+    }
+
+    .foot-bot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem
+    }
+
+    .foot-bot p {
+      font-size: .7rem;
+      color: rgba(255, 255, 255, .22)
+    }
+
+    .socials {
+      display: flex;
+      gap: .7rem
+    }
+
+    .soc {
+      width: 37px;
+      height: 37px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .4);
+      transition: all .3s
+    }
+
+    .soc:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px)
+    }
+
+    /* ══════════════ FLOAT CTA ══════════════ */
+    .float-cta {
+      position: fixed;
+      bottom: 1.9rem;
+      right: 1.9rem;
+      z-index: 98;
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      background: var(--gold);
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-size: .67rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      padding: 13px 27px 13px 21px;
+      border-radius: 60px;
+      box-shadow: 0 8px 30px rgba(196, 154, 76, .52);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform .5s cubic-bezier(.34, 1.56, .64, 1), opacity .5s ease, background .3s;
+      cursor: pointer
+    }
+
+    .float-cta.show {
+      transform: translateY(0);
+      opacity: 1
+    }
+
+    .float-cta:hover {
+      background: var(--coral);
+      transform: translateY(-4px) !important;
+      box-shadow: 0 16px 50px rgba(200, 97, 74, .52)
+    }
+
+    .float-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .5);
+      animation: dp 2s ease-in-out infinite
+    }
+
+    @keyframes dp {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: .5
+      }
+
+      50% {
+        transform: scale(1.4);
+        opacity: 1
+      }
+    }
+
+    /* ══════════════ REVEAL ══════════════ */
+    .rv {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .85s ease, transform .85s ease
+    }
+
+    .rv.in {
+      opacity: 1;
+      transform: none
+    }
+
+    .d1 {
+      transition-delay: .08s
+    }
+
+    .d2 {
+      transition-delay: .16s
+    }
+
+    .d3 {
+      transition-delay: .24s
+    }
+
+    .d4 {
+      transition-delay: .32s
+    }
+
+    .d5 {
+      transition-delay: .40s
+    }
+
+    .d6 {
+      transition-delay: .48s
+    }
+
+    /* ══════════════ RESPONSIVE ══════════════ */
+    @media(max-width:1100px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 3.2rem
+      }
+
+      .story-badge {
+        top: auto;
+        bottom: 1.5rem;
+        right: -1rem
+      }
+
+      .story-float {
+        display: none
+      }
+
+      .am-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr
+      }
+
+      .ac-8,
+      .ac-4,
+      .ac-6 {
+        grid-column: span 1
+      }
+
+      .ac-12 {
+        grid-column: span 2
+      }
+
+      .exp-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .ec-wide {
+        grid-column: span 2
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .rate-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:768px) {
+      .nav-links {
+        display: none
+      }
+
+      .nav-burger {
+        display: flex
+      }
+
+      .sec {
+        padding: 80px 0
+      }
+
+      .am-grid,
+      .testi-grid {
+        grid-template-columns: 1fr
+      }
+
+      .ac-8,
+      .ac-4,
+      .ac-6,
+      .ac-12 {
+        grid-column: span 1
+      }
+
+      .exp-grid {
+        grid-template-columns: 1fr
+      }
+
+      .ec-wide {
+        grid-column: span 1;
+        grid-template-columns: 1fr
+      }
+
+      .rate-grid {
+        grid-template-columns: 1fr
+      }
+
+      .foot-grid {
+        grid-template-columns: 1fr;
+        gap: 2.2rem
+      }
+
+      .foot-bot {
+        flex-direction: column;
+        text-align: center
+      }
+
+      .contact-cards {
+        flex-direction: column;
+        align-items: center
+      }
+
+      .hero-stats {
+        gap: 1.2rem
+      }
+
+      .offer-big {
+        display: none
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="top-bar-content">
-            <div class="top-bar-left">
-                <a href="tel:09158518560">
-                    <span>📞</span>
-                    <span>0915 851 8560</span>
-                </a>
-                <a href="mailto:baliraya2022@gmail.com">
-                    <span>✉️</span>
-                    <span>baliraya2022@gmail.com</span>
-                </a>
-            </div>
-            <div class="user-info">
-                <span id="userGreeting" class="hidden">Welcome, <span id="userName"></span>!</span>
-                <button id="logoutBtn" class="logout-btn hidden" onclick="logout()">Logout</button>
-                <span id="alwaysOpen">Always Open</span>
-            </div>
+
+  <!-- ═══════ MOBILE MENU ═══════ -->
+  <div class="mob" id="mob">
+    <span class="mob-x" id="mobX">✕</span>
+    <a href="#home" onclick="cMob()">Home</a>
+    <a href="#amenities" onclick="cMob()">Amenities</a>
+    <a href="#experience" onclick="cMob()">Experience</a>
+    <a href="#rates" onclick="cMob()">Rates</a>
+    <a href="#book" onclick="cMob()" style="color:var(--gold-lt)!important">Book Now</a>
+  </div>
+
+  <!-- ═══════ NAV ═══════ -->
+  <nav class="nav" id="nav">
+    <a href="#home" class="nav-logo"><span class="sc">❧</span>BALIRAYA</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#rates">Rates</a></li>
+      <li><a href="#book" class="nav-cta">Book Now</a></li>
+    </ul>
+    <div class="nav-burger" id="burger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-ov"></div>
+    <div class="hero-ptcls">
+      <div class="ptcl" style="width:80px;height:80px;top:14%;left:7%;background:rgba(196,154,76,.38);--d:13s;--dl:0s">
+      </div>
+      <div class="ptcl" style="width:52px;height:52px;top:62%;left:14%;background:rgba(200,97,74,.28);--d:9s;--dl:2s">
+      </div>
+      <div class="ptcl"
+        style="width:115px;height:115px;top:22%;right:11%;background:rgba(196,154,76,.22);--d:16s;--dl:1s"></div>
+      <div class="ptcl"
+        style="width:42px;height:42px;top:72%;right:19%;background:rgba(196,154,76,.48);--d:10s;--dl:3.5s"></div>
+      <div class="ptcl" style="width:62px;height:62px;top:44%;left:44%;background:rgba(74,153,144,.28);--d:12s;--dl:4s">
+      </div>
+    </div>
+    <div class="hero-inner">
+      <p class="hero-pre">Lawigan, Mati City · Davao Oriental</p>
+      <h1 class="hero-h1">Where Time<br /><em>Dissolves Into</em><br />the Tide</h1>
+      <p class="hero-sub">Leave the notifications behind. White sand beneath your feet, warm salt breeze in the air, and
+        the gentle rhythm of the Philippine Sea as your only soundtrack. Your exclusive Bali-inspired paradise in Mati
+        is waiting.</p>
+      <div class="hero-ctas">
+        <a href="#book" class="btn-gold">Book Your Exclusive Escape</a>
+        <a href="#amenities" class="btn-ghost">Explore the Resort ↓</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="stat-num">5.0</span><span class="stat-lbl">Google Rating</span></div>
+        <div class="stat-div"></div>
+        <div><span class="stat-num">100%</span><span class="stat-lbl">Private Booking</span></div>
+        <div class="stat-div"></div>
+        <div><span class="stat-num">25–30</span><span class="stat-lbl">Pax Capacity</span></div>
+        <div class="stat-div"></div>
+        <div><span class="stat-num">4.1K+</span><span class="stat-lbl">Followers</span></div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,50 C240,82 480,18 720,55 C960,92 1200,25 1440,50 L1440,80 L0,80 Z" fill="#faf5ec" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════ STORY ═══════ -->
+  <section class="story sec" id="about">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="story-text rv">
+          <span class="eyebrow">The Baliraya Story</span>
+          <h2 class="sec-title">A Bali Dream,<br /><em>Born on Mati's</em><br />Shores</h2>
+          <p>There's a certain kind of quiet that only the sea can give you — a pause in the noise of the world where
+            the only notification you receive is the gentle rhythm of waves kissing white sand.</p>
+          <p>Baliraya Beach Resort was born from one radical idea: what if the most beautiful escape from the city felt
+            like a home the sea had always been keeping for you?</p>
+          <p>Tucked in the lush, tranquil shores of Barangay Lawigan — at the southeastern tip of Mati City, Davao
+            Oriental — Baliraya is Davao's best-kept secret. Inspired by the soul-restoring serenity of Bali, it
+            whispers of golden-hour reflections on white sand, open-air lanais, swaying palms, and the kind of stillness
+            that genuinely resets you.</p>
+          <p>This is not just a resort. It's where <strong>Bali meets Mati</strong> — and where you finally exhale.</p>
+          <blockquote class="story-quote">"Life lately... trade deadlines for shorelines."</blockquote>
         </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-content">
-            <a href="#" class="logo" onclick="navigateTo('home'); return false;">
-                <span class="logo-baliraya">Baliraya</span>
-                <span class="logo-beach"> Beach Resort</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#" onclick="navigateTo('home'); return false;" class="nav-link active"
-                        data-page="home">Home</a></li>
-                <li><a href="#" onclick="navigateTo('about'); return false;" class="nav-link"
-                        data-page="about">About</a></li>
-                <li><a href="#" onclick="navigateTo('rooms'); return false;" class="nav-link"
-                        data-page="rooms">Rooms</a></li>
-                <li><a href="#" onclick="navigateTo('gallery'); return false;" class="nav-link"
-                        data-page="gallery">Gallery</a></li>
-                <li><a href="#" onclick="navigateTo('contact'); return false;" class="nav-link"
-                        data-page="contact">Contact</a></li>
-                <li id="myBookingsNav" class="hidden"><a href="#" onclick="navigateTo('my-bookings'); return false;"
-                        class="nav-link" data-page="my-bookings">My Bookings</a></li>
-                <li><a href="#" onclick="handleBookNowClick(); return false;" class="btn-book">Book Now</a></li>
-            </ul>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        <div class="story-vis rv d2">
+          <div class="story-card">
+            <div class="story-card-bot">
+              <span class="lbl">Lawigan, Mati City · Davao Oriental</span>
+              <h3>Where Bali<br />Meets Mati</h3>
+            </div>
+          </div>
+          <div class="story-badge">
+            <span class="s-stars">★★★★★</span>
+            <span class="s-num">5.0</span>
+            <span class="s-lbl">Google Reviews</span>
+          </div>
+          <div class="story-float">
+            <span class="sf-icon">🌅</span>
+            <div class="sf-title">Exclusive Booking</div>
+            <div class="sf-sub">The entire resort is yours</div>
+          </div>
         </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#" onclick="navigateTo('home'); return false;" class="mobile-nav-link active"
-                data-page="home">Home</a>
-            <a href="#" onclick="navigateTo('about'); return false;" class="mobile-nav-link" data-page="about">About</a>
-            <a href="#" onclick="navigateTo('rooms'); return false;" class="mobile-nav-link" data-page="rooms">Rooms</a>
-            <a href="#" onclick="navigateTo('gallery'); return false;" class="mobile-nav-link"
-                data-page="gallery">Gallery</a>
-            <a href="#" onclick="navigateTo('contact'); return false;" class="mobile-nav-link"
-                data-page="contact">Contact</a>
-            <a id="myBookingsNavMobile" class="hidden mobile-nav-link" href="#"
-                onclick="navigateTo('my-bookings'); return false;" data-page="my-bookings">My Bookings</a>
-            <a href="#" onclick="handleBookNowClick(); return false;" class="btn-book"
-                style="display: block; text-align: center; margin-top: 1rem;">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: Story → Amenities -->
+  <div class="wave-sep" style="background:var(--cream)">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,18 C360,72 1080,-4 1440,52 L1440,80 L0,80 Z" fill="#0b3a3a" />
+    </svg>
+  </div>
+
+  <!-- ═══════ AMENITIES ═══════ -->
+  <section class="amenities sec" id="amenities">
+    <div class="wrap">
+      <div class="tc rv">
+        <span class="eyebrow eyebrow--lt">Your Private Paradise</span>
+        <h2 class="sec-title sec-title--lt">Curated Spaces for<br /><em>Connection &amp; Rest</em></h2>
+        <p class="sec-sub sec-sub--lt" style="margin:1rem auto 0;max-width:560px">Exclusively yours. When you book
+          Baliraya, the entire resort belongs to your group — no strangers, no noise, no compromise. Only pure,
+          uninterrupted peace.</p>
+      </div>
+      <div class="am-grid">
+        <div class="ac ac-8 rv d1">
+          <span class="ac-icon">🏡</span>
+          <span class="ac-tag">Accommodation · Main House</span>
+          <h3 class="ac-title">The 2-Story Main House</h3>
+          <p class="ac-body">Designed for those who refuse to choose between comfort and beauty. Two air-conditioned
+            bedrooms offer cool, restful retreats from the midday sun, while the open-air lanai becomes your favourite
+            spot — coffee warming your hands, the tide rolling in. The spacious lounge draws everyone together for
+            late-night conversations, laughter, and moments that become lifelong memories.</p>
         </div>
-    </nav>
-
-    <!-- HOME PAGE -->
-    <div id="home" class="page active">
-        <!-- Hero Section -->
-        <section class="hero">
-            <img src="https://images.unsplash.com/photo-1747336755360-c4830d819af1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                alt="Baliraya Beach Resort" class="hero-image">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>Welcome to Baliraya Beach Resort</h1>
-                <p>Your exclusive paradise with white sand and calm waters</p>
-                <div class="hero-buttons">
-                    <a href="#" onclick="handleBookNowClick(); return false;" class="btn btn-primary">Book Your Stay</a>
-                    <a href="#" onclick="navigateTo('gallery'); return false;" class="btn btn-secondary">View
-                        Gallery</a>
-                </div>
-                <div class="hero-rating">
-                    <span class="stars">★★★★★</span>
-                    <span>5.0 Rating · 92% Recommend</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="bg-gray">
-            <div class="container">
-                <h2 class="section-title">Why Choose Baliraya?</h2>
-                <p class="section-subtitle">Experience paradise on the shores of Davao Oriental</p>
-
-                <div class="grid grid-4">
-                    <div class="card">
-                        <div class="icon-box">🌊</div>
-                        <h3 class="mb-4">White Sand Beach</h3>
-                        <p>Pristine white sand beach with calm, crystal-clear waters perfect for swimming</p>
-                    </div>
-                    <div class="card">
-                        <div class="icon-box">📍</div>
-                        <h3 class="mb-4">Prime Location</h3>
-                        <p>Near Oak Island, Waniban Island, and Pujada Island, 30km from Mati City</p>
-                    </div>
-                    <div class="card">
-                        <div class="icon-box">🛡️</div>
-                        <h3 class="mb-4">Safe & Clean</h3>
-                        <p>Well-maintained facilities with friendly staff and clean surroundings</p>
-                    </div>
-                    <div class="card">
-                        <div class="icon-box">👥</div>
-                        <h3 class="mb-4">Outdoor Seating</h3>
-                        <p>Comfortable outdoor areas perfect for relaxation and gatherings</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Preview -->
-        <section>
-            <div class="container">
-                <h2 class="section-title">Explore Our Resort</h2>
-                <p class="section-subtitle">Discover the beauty that awaits you</p>
-
-                <div class="grid grid-3">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1698099843370-990862ece606?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Beach">
-                        <div class="gallery-overlay">Beach</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1605538032432-a9f0c8d9baac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Rooms">
-                        <div class="gallery-overlay">Rooms</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1672841828482-45faa4c70e50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Sunset View">
-                        <div class="gallery-overlay">Sunset View</div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-8">
-                    <a href="#" onclick="navigateTo('gallery'); return false;" class="btn btn-primary">View Full
-                        Gallery</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Reviews Section -->
-        <section class="bg-gray">
-            <div class="container">
-                <h2 class="section-title">Guest Reviews</h2>
-                <p class="section-subtitle">See what our guests have to say</p>
-
-                <div class="grid grid-2" style="max-width: 800px; margin: 0 auto;">
-                    <div class="review-card">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"Very relaxing place🥰 Good ambiance and clean area🫶🏽🩷Will be back
-                            soon🙌"</p>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <p class="review-author">Evameah Anquiles</p>
-                            <p class="review-date">9 months ago</p>
-                        </div>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"clean and friendly staff"</p>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <p class="review-author">Paul Montejo</p>
-                            <p class="review-date">a year ago</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-8">
-                    <p style="font-size: 1.5rem; font-weight: 600;">
-                        ✨ 5.0 Rating · 92% Recommend
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="bg-sky">
-            <div class="container text-center">
-                <h2 class="section-title" style="color: white;">Ready for Your Paradise Getaway?</h2>
-                <p style="font-size: 1.25rem; margin-bottom: 2rem;">
-                    Book your stay at Baliraya Beach Resort and experience the beauty of Davao Oriental
-                </p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="tel:09158518560" class="btn btn-secondary">Call: 0915 851 8560</a>
-                    <a href="mailto:baliraya2022@gmail.com" class="btn btn-outline">Email Us</a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ABOUT PAGE -->
-    <div id="about" class="page">
-        <section class="page-header">
-            <img src="https://images.unsplash.com/photo-1622015663319-e97e697503ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                alt="About" class="hero-image">
-            <div class="hero-overlay"></div>
-            <div style="position: relative; z-index: 1;">
-                <h1 style="font-size: 3.5rem; font-weight: bold; margin-bottom: 1rem;">About Us</h1>
-                <p style="font-size: 1.25rem;">Discover Your Paradise</p>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <div class="grid grid-2" style="align-items: center;">
-                    <div>
-                        <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1.5rem; color: #1f2937;">
-                            Welcome to Baliraya Beach Resort
-                        </h2>
-                        <div style="font-size: 1.125rem; color: #4b5563; line-height: 1.8;">
-                            <p style="margin-bottom: 1rem;">
-                                Baliraya Beach Resort is an exclusive beach house destination featuring pristine
-                                white sand and calm, crystal-clear waters. Located in the beautiful province of
-                                Davao Oriental, we offer our guests an unforgettable tropical paradise experience.
-                            </p>
-                            <p style="margin-bottom: 1rem;">
-                                Our resort is strategically positioned near some of the region's most stunning
-                                natural attractions, including Oak Island, Waniban Island, and the famous Pujada
-                                Island. Just 30 kilometers from downtown Mati City, Baliraya Beach Resort provides
-                                the perfect balance of accessibility and seclusion.
-                            </p>
-                            <p>
-                                With a commitment to excellence, we maintain our facilities to the highest
-                                standards, ensuring clean surroundings and a safe environment for all our guests.
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1727184799311-bd00f3faaad6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Resort"
-                            style="width: 100%; height: 400px; object-fit: cover; border-radius: 0.5rem; box-shadow: 0 10px 15px rgba(0,0,0,0.1);">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-gray">
-            <div class="container">
-                <h2 class="section-title">Our Achievements</h2>
-                <div class="grid grid-4">
-                    <div class="stat-box">
-                        <div class="icon-box" style="margin: 0 auto 1rem;">⭐</div>
-                        <div class="stat-value">5.0</div>
-                        <div class="stat-label">Average Rating</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="icon-box" style="margin: 0 auto 1rem;">👥</div>
-                        <div class="stat-value">4.1K</div>
-                        <div class="stat-label">Followers</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="icon-box" style="margin: 0 auto 1rem;">🏆</div>
-                        <div class="stat-value">92%</div>
-                        <div class="stat-label">Recommend</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="icon-box" style="margin: 0 auto 1rem;">❤️</div>
-                        <div class="stat-value">100%</div>
-                        <div class="stat-label">Satisfaction</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <h2 class="section-title">Our Services</h2>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <div class="icon-box">👥</div>
-                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Outdoor Seating</h3>
-                        <p>Comfortable outdoor seating areas perfect for relaxation, gatherings, and enjoying the
-                            beautiful beach views.</p>
-                    </div>
-                    <div class="card">
-                        <div class="icon-box">🏆</div>
-                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Clean Facilities</h3>
-                        <p>Well-maintained and spotlessly clean facilities ensure a comfortable and hygienic stay for
-                            all our guests.</p>
-                    </div>
-                    <div class="card">
-                        <div class="icon-box">❤️</div>
-                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Friendly Staff</h3>
-                        <p>Our dedicated and friendly staff are always ready to assist you and ensure your stay is
-                            memorable.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ROOMS PAGE -->
-    <div id="rooms" class="page">
-        <section class="page-header">
-            <img src="https://images.unsplash.com/photo-1576801582643-c4e3d33efd2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                alt="Rooms" class="hero-image">
-            <div class="hero-overlay"></div>
-            <div style="position: relative; z-index: 1;">
-                <h1 style="font-size: 3.5rem; font-weight: bold; margin-bottom: 1rem;">Accommodations</h1>
-                <p style="font-size: 1.25rem;">Comfortable Stays in Paradise</p>
-            </div>
-        </section>
-
-        <section class="bg-gray" style="padding: 3rem 0;">
-            <div class="container text-center">
-                <p style="font-size: 1.25rem; color: #4b5563; max-width: 800px; margin: 0 auto;">
-                    Choose from our selection of comfortable beach houses and cottages, all featuring
-                    stunning ocean views and direct beach access.
-                </p>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <div class="grid grid-3">
-                    <div class="room-card">
-                        <img src="https://images.unsplash.com/photo-1622015663319-e97e697503ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Beachfront Villa" class="room-image">
-                        <div class="room-content">
-                            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">Beachfront Villa
-                            </h3>
-                            <p style="color: #6b7280; margin-bottom: 1rem;">👥 4-6 guests</p>
-                            <p style="font-size: 1.5rem; font-weight: 600; color: #0284c7; margin-bottom: 1rem;">
-                                ₱5,000/night</p>
-                            <ul class="room-features">
-                                <li><span class="check-icon">✓</span> Direct beach access</li>
-                                <li><span class="check-icon">✓</span> Private outdoor area</li>
-                                <li><span class="check-icon">✓</span> Ocean view</li>
-                                <li><span class="check-icon">✓</span> Air conditioning</li>
-                                <li><span class="check-icon">✓</span> Kitchen facilities</li>
-                                <li><span class="check-icon">✓</span> Free WiFi</li>
-                            </ul>
-                            <a href="#" onclick="handleBookNowClick(); return false;" class="btn btn-primary"
-                                style="width: 100%; text-align: center; margin-top: 1rem;">Book Now</a>
-                        </div>
-                    </div>
-
-                    <div class="room-card">
-                        <img src="https://images.unsplash.com/photo-1605538032432-a9f0c8d9baac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Deluxe Beach House" class="room-image">
-                        <div class="room-content">
-                            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">Deluxe Beach House
-                            </h3>
-                            <p style="color: #6b7280; margin-bottom: 1rem;">👥 2-4 guests</p>
-                            <p style="font-size: 1.5rem; font-weight: 600; color: #0284c7; margin-bottom: 1rem;">
-                                ₱3,500/night</p>
-                            <ul class="room-features">
-                                <li><span class="check-icon">✓</span> Beachfront location</li>
-                                <li><span class="check-icon">✓</span> Spacious rooms</li>
-                                <li><span class="check-icon">✓</span> Modern amenities</li>
-                                <li><span class="check-icon">✓</span> Air conditioning</li>
-                                <li><span class="check-icon">✓</span> Dining area</li>
-                                <li><span class="check-icon">✓</span> Free WiFi</li>
-                            </ul>
-                            <a href="#" onclick="handleBookNowClick(); return false;" class="btn btn-primary"
-                                style="width: 100%; text-align: center; margin-top: 1rem;">Book Now</a>
-                        </div>
-                    </div>
-
-                    <div class="room-card">
-                        <img src="https://images.unsplash.com/photo-1727184799311-bd00f3faaad6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Standard Beach Cottage" class="room-image">
-                        <div class="room-content">
-                            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">Standard Beach
-                                Cottage</h3>
-                            <p style="color: #6b7280; margin-bottom: 1rem;">👥 2-3 guests</p>
-                            <p style="font-size: 1.5rem; font-weight: 600; color: #0284c7; margin-bottom: 1rem;">
-                                ₱2,500/night</p>
-                            <ul class="room-features">
-                                <li><span class="check-icon">✓</span> Beach access</li>
-                                <li><span class="check-icon">✓</span> Comfortable beds</li>
-                                <li><span class="check-icon">✓</span> Clean facilities</li>
-                                <li><span class="check-icon">✓</span> Air conditioning</li>
-                                <li><span class="check-icon">✓</span> Basic amenities</li>
-                                <li><span class="check-icon">✓</span> Free WiFi</li>
-                            </ul>
-                            <a href="#" onclick="handleBookNowClick(); return false;" class="btn btn-primary"
-                                style="width: 100%; text-align: center; margin-top: 1rem;">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-gray">
-            <div class="container">
-                <h2 class="section-title">Resort Amenities</h2>
-                <div class="amenities-grid">
-                    <div class="text-center">
-                        <div class="icon-box" style="margin: 0 auto 0.75rem;">📶</div>
-                        <p style="font-weight: 500;">Free WiFi</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="icon-box" style="margin: 0 auto 0.75rem;">❄️</div>
-                        <p style="font-weight: 500;">Air Conditioning</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="icon-box" style="margin: 0 auto 0.75rem;">🌊</div>
-                        <p style="font-weight: 500;">Beach Access</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="icon-box" style="margin: 0 auto 0.75rem;">☕</div>
-                        <p style="font-weight: 500;">Dining Area</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="icon-box" style="margin: 0 auto 0.75rem;">👥</div>
-                        <p style="font-weight: 500;">Outdoor Seating</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="icon-box" style="margin: 0 auto 0.75rem;">🛏️</div>
-                        <p style="font-weight: 500;">Comfortable Beds</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- GALLERY PAGE -->
-    <div id="gallery" class="page">
-        <section class="page-header">
-            <img src="https://images.unsplash.com/photo-1747336755360-c4830d819af1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                alt="Gallery" class="hero-image">
-            <div class="hero-overlay"></div>
-            <div style="position: relative; z-index: 1;">
-                <h1 style="font-size: 3.5rem; font-weight: bold; margin-bottom: 1rem;">Photo Gallery</h1>
-                <p style="font-size: 1.25rem;">Explore the beauty of Baliraya Beach Resort</p>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 2rem;">Beach</h2>
-                <div class="grid grid-2 mb-6">
-                    <div class="gallery-item"
-                        onclick="openLightbox('https://images.unsplash.com/photo-1698099843370-990862ece606?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080')">
-                        <img src="https://images.unsplash.com/photo-1698099843370-990862ece606?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Beach 1">
-                        <div class="gallery-overlay">Click to view</div>
-                    </div>
-                    <div class="gallery-item"
-                        onclick="openLightbox('https://images.unsplash.com/photo-1672841828482-45faa4c70e50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080')">
-                        <img src="https://images.unsplash.com/photo-1672841828482-45faa4c70e50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Beach 2">
-                        <div class="gallery-overlay">Click to view</div>
-                    </div>
-                </div>
-
-                <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 2rem; margin-top: 4rem;">Rooms</h2>
-                <div class="grid grid-2 mb-6">
-                    <div class="gallery-item"
-                        onclick="openLightbox('https://images.unsplash.com/photo-1605538032432-a9f0c8d9baac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080')">
-                        <img src="https://images.unsplash.com/photo-1605538032432-a9f0c8d9baac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Room 1">
-                        <div class="gallery-overlay">Click to view</div>
-                    </div>
-                    <div class="gallery-item"
-                        onclick="openLightbox('https://images.unsplash.com/photo-1727184799311-bd00f3faaad6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080')">
-                        <img src="https://images.unsplash.com/photo-1727184799311-bd00f3faaad6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Room 2">
-                        <div class="gallery-overlay">Click to view</div>
-                    </div>
-                </div>
-
-                <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 2rem; margin-top: 4rem;">Exterior</h2>
-                <div class="grid grid-2 mb-6">
-                    <div class="gallery-item"
-                        onclick="openLightbox('https://images.unsplash.com/photo-1622015663319-e97e697503ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080')">
-                        <img src="https://images.unsplash.com/photo-1622015663319-e97e697503ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Exterior 1">
-                        <div class="gallery-overlay">Click to view</div>
-                    </div>
-                    <div class="gallery-item"
-                        onclick="openLightbox('https://images.unsplash.com/photo-1747336755360-c4830d819af1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080')">
-                        <img src="https://images.unsplash.com/photo-1747336755360-c4830d819af1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Exterior 2">
-                        <div class="gallery-overlay">Click to view</div>
-                    </div>
-                </div>
-
-                <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 2rem; margin-top: 4rem;">Food & Drink</h2>
-                <div class="grid grid-2">
-                    <div class="gallery-item"
-                        onclick="openLightbox('https://images.unsplash.com/photo-1755493872556-5c29bac85c5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080')">
-                        <img src="https://images.unsplash.com/photo-1755493872556-5c29bac85c5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Dining 1">
-                        <div class="gallery-overlay">Click to view</div>
-                    </div>
-                    <div class="gallery-item"
-                        onclick="openLightbox('https://images.unsplash.com/photo-1576801582643-c4e3d33efd2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080')">
-                        <img src="https://images.unsplash.com/photo-1576801582643-c4e3d33efd2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                            alt="Pool">
-                        <div class="gallery-overlay">Click to view</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-gray">
-            <div class="container text-center">
-                <h2 class="section-title">Experience It in Person</h2>
-                <p
-                    style="font-size: 1.25rem; color: #4b5563; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                    These photos only capture a glimpse of the beauty that awaits you. Book your stay
-                    and create your own unforgettable memories at Baliraya Beach Resort.
-                </p>
-                <a href="#" onclick="handleBookNowClick(); return false;" class="btn btn-primary">Book Your Stay Now</a>
-            </div>
-        </section>
-    </div>
-
-    <!-- CONTACT PAGE -->
-    <div id="contact" class="page">
-        <section class="page-header">
-            <img src="https://images.unsplash.com/photo-1672841828482-45faa4c70e50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                alt="Contact" class="hero-image">
-            <div class="hero-overlay"></div>
-            <div style="position: relative; z-index: 1;">
-                <h1 style="font-size: 3.5rem; font-weight: bold; margin-bottom: 1rem;">Contact Us</h1>
-                <p style="font-size: 1.25rem;">Get in touch with us today</p>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <div class="grid grid-2">
-                    <div>
-                        <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem;">Send Us a Message</h2>
-                        <form onsubmit="handleContactSubmit(event)">
-                            <div class="form-group">
-                                <label class="form-label">Name *</label>
-                                <input type="text" class="form-input" placeholder="Your name" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Email *</label>
-                                <input type="email" class="form-input" placeholder="your.email@example.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Phone</label>
-                                <input type="tel" class="form-input" placeholder="Your phone number">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Message *</label>
-                                <textarea class="form-textarea" rows="6"
-                                    placeholder="Tell us about your inquiry or booking request..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">
-                                📨 Send Message
-                            </button>
-                        </form>
-                    </div>
-
-                    <div>
-                        <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem;">Contact Information</h2>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div>
-                                <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Address</h3>
-                                <p style="color: #4b5563;">
-                                    Purok Bayanihan, Barangay Lawigan<br>
-                                    Tamisan-Lawigan Rd<br>
-                                    City of Mati, Davao Oriental<br>
-                                    Philippines
-                                </p>
-                                <p style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">
-                                    30 kilometers from downtown Mati City
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <div>
-                                <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Phone</h3>
-                                <a href="tel:09158518560"
-                                    style="color: #0284c7; font-size: 1.125rem; text-decoration: none;">0915 851
-                                    8560</a>
-                                <p style="font-size: 0.875rem; color: #6b7280; margin-top: 0.25rem;">Available 24/7</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">✉️</div>
-                            <div>
-                                <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Email</h3>
-                                <a href="mailto:baliraya2022@gmail.com"
-                                    style="color: #0284c7; font-size: 1.125rem; text-decoration: none;">baliraya2022@gmail.com</a>
-                                <p style="font-size: 0.875rem; color: #6b7280; margin-top: 0.25rem;">We'll respond
-                                    within 24 hours</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">🕒</div>
-                            <div>
-                                <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Business Hours</h3>
-                                <p style="font-size: 1.125rem; color: #4b5563;">Always Open</p>
-                                <p style="font-size: 0.875rem; color: #6b7280; margin-top: 0.25rem;">24 hours a day, 7
-                                    days a week</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-gray">
-            <div class="container">
-                <h2 class="section-title">Find Us</h2>
-                <p class="section-subtitle">30 kilometers from downtown Mati City</p>
-                <div class="map-container">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.0!2d126.3291854!3d6.7999678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32fa4b834a13ae3f%3A0x8fd1128934486fa3!2sBaliraya%20Beach%20Resort!5e0!3m2!1sen!2sph!4v1710000000000!5m2!1sen!2sph"
-                        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="text-center mt-4">
-                    <a href="https://www.google.com/maps/place/Baliraya+Beach+Resort/@6.7999678,126.3266105,17z/data=!3m1!4b1!4m6!3m5!1s0x32fa4b834a13ae3f:0x8fd1128934486fa3!8m2!3d6.7999678!4d126.3291854!16s%2Fg%2F11r1dcgq5w?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D"
-                        target="_blank" rel="noopener noreferrer"
-                        style="color: #0284c7; font-weight: 600; text-decoration: none;">
-                        📍 Open in Google Maps →
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <h2 class="section-title">Nearby Attractions</h2>
-                <div class="grid grid-3">
-                    <div class="card text-center">
-                        <div class="icon-box" style="margin: 0 auto 1rem;">📍</div>
-                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Oak Island</h3>
-                        <p style="color: #6b7280;">Beautiful island perfect for day trips and exploration</p>
-                    </div>
-                    <div class="card text-center">
-                        <div class="icon-box" style="margin: 0 auto 1rem;">📍</div>
-                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Waniban Island</h3>
-                        <p style="color: #6b7280;">Pristine island with crystal-clear waters</p>
-                    </div>
-                    <div class="card text-center">
-                        <div class="icon-box" style="margin: 0 auto 1rem;">📍</div>
-                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Pujada Island</h3>
-                        <p style="color: #6b7280;">Famous island destination in Davao Oriental</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- LOGIN/REGISTER PAGE -->
-    <div id="auth" class="page">
-        <section style="padding: 5rem 0; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);">
-            <div class="container auth-container">
-                <!-- Login Form -->
-                <div id="loginForm" class="auth-card">
-                    <div class="auth-header">
-                        <h2>Login to Your Account</h2>
-                        <p style="color: #6b7280;">Welcome back to Baliraya Beach Resort</p>
-                    </div>
-                    <div id="loginError" class="alert alert-error hidden"></div>
-                    <form onsubmit="handleLogin(event)">
-                        <div class="form-group">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" id="loginEmail" class="form-input" placeholder="your.email@example.com"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Password</label>
-                            <input type="password" id="loginPassword" class="form-input"
-                                placeholder="Enter your password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            🔐 Login
-                        </button>
-                    </form>
-                    <div class="auth-toggle">
-                        <p>Don't have an account? <a href="#" onclick="toggleAuthForm(); return false;">Register
-                                here</a></p>
-                    </div>
-                </div>
-
-                <!-- Register Form -->
-                <div id="registerForm" class="auth-card hidden">
-                    <div class="auth-header">
-                        <h2>Create an Account</h2>
-                        <p style="color: #6b7280;">Join Baliraya Beach Resort</p>
-                    </div>
-                    <div id="registerError" class="alert alert-error hidden"></div>
-                    <div id="registerSuccess" class="alert alert-success hidden"></div>
-                    <form onsubmit="handleRegister(event)">
-                        <div class="form-group">
-                            <label class="form-label">Full Name</label>
-                            <input type="text" id="registerName" class="form-input" placeholder="Enter your full name"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" id="registerEmail" class="form-input"
-                                placeholder="your.email@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Password</label>
-                            <input type="password" id="registerPassword" class="form-input"
-                                placeholder="Create a password" required minlength="6">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Confirm Password</label>
-                            <input type="password" id="registerConfirmPassword" class="form-input"
-                                placeholder="Confirm your password" required minlength="6">
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            ✅ Register
-                        </button>
-                    </form>
-                    <div class="auth-toggle">
-                        <p>Already have an account? <a href="#" onclick="toggleAuthForm(); return false;">Login here</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- BROWSE ROOMS & BOOK PAGE -->
-    <div id="browse-rooms" class="page">
-        <section class="page-header">
-            <img src="https://images.unsplash.com/photo-1605538032432-a9f0c8d9baac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
-                alt="Browse Rooms" class="hero-image">
-            <div class="hero-overlay"></div>
-            <div style="position: relative; z-index: 1;">
-                <h1 style="font-size: 3.5rem; font-weight: bold; margin-bottom: 1rem;">Browse Rooms & Dates</h1>
-                <p style="font-size: 1.25rem;">Select your perfect accommodation</p>
-            </div>
-        </section>
-
-        <section>
-            <div class="container" style="max-width: 900px;">
-                <div class="alert alert-info">
-                    <strong>📅 Step 1:</strong> Select your dates and choose your room
-                </div>
-
-                <div
-                    style="background: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">Select Dates</h3>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <div class="form-group">
-                            <label class="form-label">Check-in Date</label>
-                            <input type="date" id="browseCheckIn" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Check-out Date</label>
-                            <input type="date" id="browseCheckOut" class="form-input" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Number of Guests</label>
-                        <input type="number" id="browseGuests" class="form-input" min="1" max="10" value="2" required>
-                    </div>
-                </div>
-
-                <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 2rem;">Available Rooms</h2>
-
-                <div id="roomsList" class="grid grid-1" style="gap: 1.5rem;">
-                    <!-- Rooms will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- CONFIRM BOOKING PAGE -->
-    <div id="confirm-booking" class="page">
-        <section class="page-header" style="height: 16rem;">
-            <div
-                style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); height: 100%; display: flex; align-items: center; justify-content: center;">
-                <div style="position: relative; z-index: 1; text-align: center;">
-                    <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem; color: white;">Confirm Your
-                        Booking</h1>
-                    <p style="font-size: 1.125rem; color: white;">Review and confirm your reservation</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container" style="max-width: 700px;">
-                <div id="confirmBookingContent">
-                    <!-- Content will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- BOOKING CONFIRMED PAGE -->
-    <div id="booking-confirmed" class="page">
-        <section style="padding: 3rem 0; background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-            <div class="container text-center">
-                <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
-                <h1 style="font-size: 3rem; font-weight: bold; color: white; margin-bottom: 0.5rem;">Booking Confirmed!
-                </h1>
-                <p style="font-size: 1.25rem; color: white;">Your reservation has been successfully confirmed</p>
-            </div>
-        </section>
-
-        <section>
-            <div class="container" style="max-width: 700px;">
-                <div id="bookingReceiptContent">
-                    <!-- Content will be populated by JavaScript -->
-                </div>
-
-                <div class="text-center mt-8">
-                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                        <a href="#" onclick="navigateTo('home'); return false;" class="btn btn-secondary">Go to Home</a>
-                        <a href="#" onclick="navigateTo('my-bookings'); return false;" class="btn btn-primary">View My
-                            Bookings</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- MY BOOKINGS PAGE -->
-    <div id="my-bookings" class="page">
-        <section class="page-header" style="height: 16rem;">
-            <div
-                style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); height: 100%; display: flex; align-items: center; justify-content: center;">
-                <div style="position: relative; z-index: 1; text-align: center;">
-                    <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem; color: white;">My Bookings</h1>
-                    <p style="font-size: 1.125rem; color: white;">View and manage your reservations</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container" style="max-width: 900px;">
-                <div id="bookingsList">
-                    <!-- Content will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h3 class="footer-title">Baliraya Beach Resort</h3>
-                    <p style="color: #d1d5db; margin-bottom: 1rem;">
-                        Exclusive beach house with white sand and calm waters. Near Oak Island, Waniban Island, and
-                        Pujada Island.
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem;">
-                        <span style="color: #fbbf24;">★★★★★</span>
-                        <span style="color: #d1d5db; font-size: 0.875rem;">5.0 Rating</span>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul>
-                        <li><a href="#" onclick="navigateTo('home'); return false;">Home</a></li>
-                        <li><a href="#" onclick="navigateTo('about'); return false;">About Us</a></li>
-                        <li><a href="#" onclick="navigateTo('rooms'); return false;">Accommodations</a></li>
-                        <li><a href="#" onclick="navigateTo('gallery'); return false;">Gallery</a></li>
-                        <li><a href="#" onclick="navigateTo('contact'); return false;">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="footer-title">Contact Us</h3>
-                    <ul style="font-size: 0.875rem;">
-                        <li style="margin-bottom: 1rem;">
-                            <div style="display: flex; gap: 0.75rem;">
-                                <span>📍</span>
-                                <span>Purok Bayanihan, Barangay Lawigan, Mati City, Davao Oriental, Philippines</span>
-                            </div>
-                        </li>
-                        <li style="margin-bottom: 1rem;">
-                            <a href="tel:09158518560">📞 0915 851 8560</a>
-                        </li>
-                        <li>
-                            <a href="mailto:baliraya2022@gmail.com">✉️ baliraya2022@gmail.com</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="footer-title">Business Hours</h3>
-                    <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem;">
-                        <span style="font-size: 1.25rem;">🕒</span>
-                        <div>
-                            <p style="color: #d1d5db; font-weight: 600;">Always Open</p>
-                            <p style="color: #9ca3af; font-size: 0.75rem;">24/7 Service</p>
-                        </div>
-                    </div>
-                    <h4 style="color: white; font-weight: 600; margin-bottom: 0.5rem;">Follow Us</h4>
-                    <a href="https://facebook.com" target="_blank"
-                        style="display: flex; align-items: center; gap: 0.5rem; color: #d1d5db;">
-                        <span>📘</span>
-                        <span>4.1K followers</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 Baliraya Beach Resort. All rights reserved.</p>
-            </div>
+        <div class="ac ac-4 rv d2">
+          <span class="ac-icon">⛩️</span>
+          <span class="ac-tag">Gathering · Gazebo</span>
+          <h3 class="ac-title">The 2-Story Gazebo</h3>
+          <p class="ac-body">Your open-air sanctuary for gatherings that stretch deep into the night. Sea breeze, wave
+            soundtrack, and a sky thick with stars. The perfect spot for toasts, stories, and that magic hour when
+            everyone forgets to check their phone.</p>
         </div>
-    </footer>
-
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <button class="lightbox-close" onclick="closeLightbox()">×</button>
-        <img id="lightboxImage" src="" alt="Full size">
+        <div class="ac ac-4 rv d3">
+          <span class="ac-icon">🌳</span>
+          <span class="ac-tag">Signature · Treehouse</span>
+          <h3 class="ac-title">The 2-Story Treehouse</h3>
+          <p class="ac-body">The resort's most coveted retreat — perched high in a natural canopy, delivering
+            uninterrupted views of the Mindanao Sea and a sky so clear you'll see the Milky Way. Perfect for reading,
+            dreaming, or breathtaking silence.</p>
+        </div>
+        <div class="ac ac-4 rv d4">
+          <span class="ac-icon">🏊</span>
+          <span class="ac-tag">Relaxation · Pool</span>
+          <h3 class="ac-title">Private Mini Pool</h3>
+          <p class="ac-body">Step from the white sand into the cool, clear waters of your private pool. The perfect
+            afternoon counterpoint to the sun-soaked beach. The kids will love it. You'll love the peace it brings.</p>
+        </div>
+        <div class="ac ac-8 rv d1">
+          <span class="ac-icon">🌊</span>
+          <span class="ac-tag">Activities &amp; Entertainment</span>
+          <h3 class="ac-title">Everything You Need for a Perfect Day</h3>
+          <p class="ac-body" style="margin-bottom:1.4rem">From sunrise kayak to bonfire under the stars — Baliraya gives
+            you all the ingredients for a day that feels both exhilarating and deeply restful.</p>
+          <div class="chips">
+            <span class="chip">🚣 2-Person Kayak</span>
+            <span class="chip">🔥 Bonfire by the Beach</span>
+            <span class="chip">🎤 Videoke</span>
+            <span class="chip">🏐 Beach Volleyball</span>
+            <span class="chip">🏸 Badminton</span>
+            <span class="chip">🌊 Cozy Beach Swings</span>
+          </div>
+        </div>
+        <div class="ac ac-12 rv d2" style="padding:1.7rem 2.2rem">
+          <span class="ac-tag" style="margin-bottom:.85rem">Resort Infrastructure · Peace of Mind Included</span>
+          <div class="chips">
+            <span class="chip chip-u">🛣️ 98% Cemented Road</span>
+            <span class="chip chip-u">☀️ Solar Lights</span>
+            <span class="chip chip-u">⚡ Generator Back-up Power</span>
+            <span class="chip chip-u">💧 Pressure Tank Water Supply</span>
+            <span class="chip chip-u">🚗 Parking for 4–5 Cars</span>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <script>
-        // ==================== DATA STRUCTURE ====================
-        const rooms = [
-            {
-                id: 'beachfront-villa',
-                name: 'Beachfront Villa',
-                capacity: 6,
-                price: 5000,
-                image: 'https://images.unsplash.com/photo-1622015663319-e97e697503ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
-                features: ['Direct beach access', 'Private outdoor area', 'Ocean view', 'Air conditioning', 'Kitchen facilities', 'Free WiFi']
-            },
-            {
-                id: 'deluxe-beach-house',
-                name: 'Deluxe Beach House',
-                capacity: 4,
-                price: 3500,
-                image: 'https://images.unsplash.com/photo-1605538032432-a9f0c8d9baac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
-                features: ['Beachfront location', 'Spacious rooms', 'Modern amenities', 'Air conditioning', 'Dining area', 'Free WiFi']
-            },
-            {
-                id: 'standard-cottage',
-                name: 'Standard Beach Cottage',
-                capacity: 3,
-                price: 2500,
-                image: 'https://images.unsplash.com/photo-1727184799311-bd00f3faaad6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
-                features: ['Beach access', 'Comfortable beds', 'Clean facilities', 'Air conditioning', 'Basic amenities', 'Free WiFi']
-            }
-        ];
-
-        let currentBooking = null;
-
-        // ==================== LOCAL STORAGE FUNCTIONS ====================
-        function saveToLocalStorage(key, data) {
-            localStorage.setItem(key, JSON.stringify(data));
-        }
-
-        function getFromLocalStorage(key) {
-            const data = localStorage.getItem(key);
-            return data ? JSON.parse(data) : null;
-        }
-
-        function getCurrentUser() {
-            return getFromLocalStorage('currentUser');
-        }
-
-        function setCurrentUser(user) {
-            saveToLocalStorage('currentUser', user);
-        }
-
-        function getUsers() {
-            return getFromLocalStorage('users') || [];
-        }
-
-        function saveUsers(users) {
-            saveToLocalStorage('users', users);
-        }
-
-        function getBookings() {
-            return getFromLocalStorage('bookings') || [];
-        }
-
-        function saveBookings(bookings) {
-            saveToLocalStorage('bookings', bookings);
-        }
-
-        function getUserBookings(userEmail) {
-            const allBookings = getBookings();
-            return allBookings.filter(b => b.userEmail === userEmail);
-        }
-
-        // ==================== AUTHENTICATION ====================
-        function handleRegister(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('registerName').value;
-            const email = document.getElementById('registerEmail').value;
-            const password = document.getElementById('registerPassword').value;
-            const confirmPassword = document.getElementById('registerConfirmPassword').value;
-
-            const errorDiv = document.getElementById('registerError');
-            const successDiv = document.getElementById('registerSuccess');
-
-            errorDiv.classList.add('hidden');
-            successDiv.classList.add('hidden');
-
-            if (password !== confirmPassword) {
-                errorDiv.textContent = 'Passwords do not match!';
-                errorDiv.classList.remove('hidden');
-                return;
-            }
-
-            const users = getUsers();
-            const existingUser = users.find(u => u.email === email);
-
-            if (existingUser) {
-                errorDiv.textContent = 'Email already registered!';
-                errorDiv.classList.remove('hidden');
-                return;
-            }
-
-            const newUser = {
-                name: name,
-                email: email,
-                password: password,
-                createdAt: new Date().toISOString()
-            };
-
-            users.push(newUser);
-            saveUsers(users);
-
-            successDiv.textContent = '✅ Account created successfully! You can now login.';
-            successDiv.classList.remove('hidden');
-
-            event.target.reset();
-
-            setTimeout(() => {
-                toggleAuthForm();
-            }, 2000);
-        }
-
-        function handleLogin(event) {
-            event.preventDefault();
-
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-
-            const errorDiv = document.getElementById('loginError');
-            errorDiv.classList.add('hidden');
-
-            const users = getUsers();
-            const user = users.find(u => u.email === email && u.password === password);
-
-            if (!user) {
-                errorDiv.textContent = 'Invalid email or password!';
-                errorDiv.classList.remove('hidden');
-                return;
-            }
-
-            setCurrentUser(user);
-            updateUIForLoggedInUser();
-            navigateTo('browse-rooms');
-        }
-
-        function logout() {
-            localStorage.removeItem('currentUser');
-            updateUIForLoggedInUser();
-            navigateTo('home');
-        }
-
-        function toggleAuthForm() {
-            document.getElementById('loginForm').classList.toggle('hidden');
-            document.getElementById('registerForm').classList.toggle('hidden');
-            document.getElementById('loginError').classList.add('hidden');
-            document.getElementById('registerError').classList.add('hidden');
-            document.getElementById('registerSuccess').classList.add('hidden');
-        }
-
-        function updateUIForLoggedInUser() {
-            const user = getCurrentUser();
-            const userGreeting = document.getElementById('userGreeting');
-            const userName = document.getElementById('userName');
-            const logoutBtn = document.getElementById('logoutBtn');
-            const alwaysOpen = document.getElementById('alwaysOpen');
-            const myBookingsNav = document.getElementById('myBookingsNav');
-            const myBookingsNavMobile = document.getElementById('myBookingsNavMobile');
-
-            if (user) {
-                userName.textContent = user.name;
-                userGreeting.classList.remove('hidden');
-                logoutBtn.classList.remove('hidden');
-                alwaysOpen.classList.add('hidden');
-                myBookingsNav.classList.remove('hidden');
-                myBookingsNavMobile.classList.remove('hidden');
-            } else {
-                userGreeting.classList.add('hidden');
-                logoutBtn.classList.add('hidden');
-                alwaysOpen.classList.remove('hidden');
-                myBookingsNav.classList.add('hidden');
-                myBookingsNavMobile.classList.add('hidden');
-            }
-        }
-
-        // ==================== BOOKING FLOW ====================
-        function handleBookNowClick() {
-            const user = getCurrentUser();
-            if (!user) {
-                navigateTo('auth');
-            } else {
-                navigateTo('browse-rooms');
-            }
-        }
-
-        function renderRoomsList() {
-            const checkIn = document.getElementById('browseCheckIn').value;
-            const checkOut = document.getElementById('browseCheckOut').value;
-            const guests = parseInt(document.getElementById('browseGuests').value);
-
-            const roomsList = document.getElementById('roomsList');
-
-            if (!checkIn || !checkOut) {
-                roomsList.innerHTML = '<p class="text-center" style="color: #6b7280;">Please select check-in and check-out dates to view available rooms.</p>';
-                return;
-            }
-
-            if (new Date(checkIn) >= new Date(checkOut)) {
-                roomsList.innerHTML = '<p class="text-center" style="color: #991b1b;">Check-out date must be after check-in date.</p>';
-                return;
-            }
-
-            const nights = Math.ceil((new Date(checkOut) - new Date(checkIn)) / (1000 * 60 * 60 * 24));
-
-            roomsList.innerHTML = rooms.map(room => {
-                const totalPrice = room.price * nights;
-                const canAccommodate = guests <= room.capacity;
-                const availability = canAccommodate ? 'Available' : 'Not enough capacity';
-
-                return `
-                    <div class="room-browse-card">
-                        <img src="${room.image}" alt="${room.name}" style="width: 100%; height: 200px; object-fit: cover;">
-                        <div style="padding: 1.5rem;">
-                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                                <div>
-                                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">${room.name}</h3>
-                                    <p style="color: #6b7280;">👥 Up to ${room.capacity} guests</p>
-                                </div>
-                                <span class="availability-badge ${canAccommodate ? 'available' : 'limited'}">${availability}</span>
-                            </div>
-                            <div style="margin: 1rem 0; padding: 1rem; background: #f9fafb; border-radius: 0.5rem;">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="color: #6b7280;">₱${room.price.toLocaleString()} × ${nights} night${nights > 1 ? 's' : ''}</span>
-                                    <span style="font-weight: 600;">₱${totalPrice.toLocaleString()}</span>
-                                </div>
-                                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.5rem; padding-top: 0.5rem;">
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-weight: 600;">Total</span>
-                                        <span class="room-price">₱${totalPrice.toLocaleString()}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button 
-                                onclick="selectRoom('${room.id}', ${nights}, ${totalPrice})" 
-                                class="btn ${canAccommodate ? 'btn-primary' : 'btn-secondary'}" 
-                                style="width: 100%;"
-                                ${!canAccommodate ? 'disabled' : ''}
-                            >
-                                ${canAccommodate ? 'Select Room' : 'Capacity Exceeded'}
-                            </button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        function selectRoom(roomId, nights, totalPrice) {
-            const room = rooms.find(r => r.id === roomId);
-            const checkIn = document.getElementById('browseCheckIn').value;
-            const checkOut = document.getElementById('browseCheckOut').value;
-            const guests = parseInt(document.getElementById('browseGuests').value);
-            const user = getCurrentUser();
-
-            currentBooking = {
-                room: room,
-                checkIn: checkIn,
-                checkOut: checkOut,
-                guests: guests,
-                nights: nights,
-                totalPrice: totalPrice,
-                user: user
-            };
-
-            navigateTo('confirm-booking');
-            renderConfirmBooking();
-        }
-
-        function renderConfirmBooking() {
-            if (!currentBooking) return;
-
-            const content = document.getElementById('confirmBookingContent');
-            content.innerHTML = `
-                <div class="alert alert-info">
-                    <strong>📋 Step 2:</strong> Review your booking details and confirm
-                </div>
-                
-                <div style="background: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <h2 style="font-size: 1.75rem; font-weight: bold; margin-bottom: 1.5rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 1rem;">
-                        Booking Summary
-                    </h2>
-                    
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
-                        <div>
-                            <h3 style="font-weight: 600; margin-bottom: 0.5rem; color: #374151;">Room Details</h3>
-                            <div style="background: #f9fafb; padding: 1rem; border-radius: 0.5rem;">
-                                <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">${currentBooking.room.name}</p>
-                                <p style="color: #6b7280;">Capacity: Up to ${currentBooking.room.capacity} guests</p>
-                                <p style="color: #6b7280;">Rate: ₱${currentBooking.room.price.toLocaleString()}/night</p>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h3 style="font-weight: 600; margin-bottom: 0.5rem; color: #374151;">Reservation Details</h3>
-                            <div style="background: #f9fafb; padding: 1rem; border-radius: 0.5rem;">
-                                <div style="margin-bottom: 0.5rem;">
-                                    <strong>Check-in:</strong> ${new Date(currentBooking.checkIn).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-                                </div>
-                                <div style="margin-bottom: 0.5rem;">
-                                    <strong>Check-out:</strong> ${new Date(currentBooking.checkOut).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-                                </div>
-                                <div style="margin-bottom: 0.5rem;">
-                                    <strong>Number of nights:</strong> ${currentBooking.nights}
-                                </div>
-                                <div>
-                                    <strong>Number of guests:</strong> ${currentBooking.guests}
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h3 style="font-weight: 600; margin-bottom: 0.5rem; color: #374151;">Guest Information</h3>
-                            <div style="background: #f9fafb; padding: 1rem; border-radius: 0.5rem;">
-                                <div style="margin-bottom: 0.5rem;">
-                                    <strong>Name:</strong> ${currentBooking.user.name}
-                                </div>
-                                <div>
-                                    <strong>Email:</strong> ${currentBooking.user.email}
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h3 style="font-weight: 600; margin-bottom: 0.5rem; color: #374151;">Price Breakdown</h3>
-                            <div style="background: #f9fafb; padding: 1rem; border-radius: 0.5rem;">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span>₱${currentBooking.room.price.toLocaleString()} × ${currentBooking.nights} night${currentBooking.nights > 1 ? 's' : ''}</span>
-                                    <span>₱${(currentBooking.room.price * currentBooking.nights).toLocaleString()}</span>
-                                </div>
-                                <div style="border-top: 2px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 1.25rem; font-weight: bold;">
-                                    <span>Total</span>
-                                    <span style="color: #0284c7;">₱${currentBooking.totalPrice.toLocaleString()}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid #e5e7eb;">
-                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                            <button onclick="navigateTo('browse-rooms')" class="btn btn-secondary">← Back to Rooms</button>
-                            <button onclick="confirmBooking()" class="btn btn-primary">✅ Confirm Booking</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function confirmBooking() {
-            if (!currentBooking) return;
-
-            const booking = {
-                id: 'BKG-' + Date.now(),
-                userEmail: currentBooking.user.email,
-                userName: currentBooking.user.name,
-                roomId: currentBooking.room.id,
-                roomName: currentBooking.room.name,
-                checkIn: currentBooking.checkIn,
-                checkOut: currentBooking.checkOut,
-                guests: currentBooking.guests,
-                nights: currentBooking.nights,
-                totalPrice: currentBooking.totalPrice,
-                status: 'confirmed',
-                bookingDate: new Date().toISOString()
-            };
-
-            const bookings = getBookings();
-            bookings.push(booking);
-            saveBookings(bookings);
-
-            navigateTo('booking-confirmed');
-            renderBookingReceipt(booking);
-        }
-
-        function renderBookingReceipt(booking) {
-            const content = document.getElementById('bookingReceiptContent');
-            content.innerHTML = `
-                <div class="receipt">
-                    <div class="receipt-header">
-                        <h2 style="font-size: 2rem; font-weight: bold; color: #1f2937; margin-bottom: 0.5rem;">Booking Receipt</h2>
-                        <p style="color: #6b7280;">Baliraya Beach Resort</p>
-                    </div>
-                    
-                    <div class="receipt-success">
-                        ✅ Your booking has been confirmed! We look forward to welcoming you.
-                    </div>
-                    
-                    <div class="receipt-details">
-                        <div class="receipt-row">
-                            <span><strong>Booking ID:</strong></span>
-                            <span>${booking.id}</span>
-                        </div>
-                        <div class="receipt-row">
-                            <span><strong>Guest Name:</strong></span>
-                            <span>${booking.userName}</span>
-                        </div>
-                        <div class="receipt-row">
-                            <span><strong>Email:</strong></span>
-                            <span>${booking.userEmail}</span>
-                        </div>
-                        <div class="receipt-row">
-                            <span><strong>Room:</strong></span>
-                            <span>${booking.roomName}</span>
-                        </div>
-                        <div class="receipt-row">
-                            <span><strong>Check-in:</strong></span>
-                            <span>${new Date(booking.checkIn).toLocaleDateString()}</span>
-                        </div>
-                        <div class="receipt-row">
-                            <span><strong>Check-out:</strong></span>
-                            <span>${new Date(booking.checkOut).toLocaleDateString()}</span>
-                        </div>
-                        <div class="receipt-row">
-                            <span><strong>Nights:</strong></span>
-                            <span>${booking.nights}</span>
-                        </div>
-                        <div class="receipt-row">
-                            <span><strong>Guests:</strong></span>
-                            <span>${booking.guests}</span>
-                        </div>
-                        <div class="receipt-row">
-                            <span><strong>Total Amount:</strong></span>
-                            <span>₱${booking.totalPrice.toLocaleString()}</span>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-top: 1.5rem; padding: 1rem; background: #dbeafe; border-radius: 0.5rem; text-align: center;">
-                        <p style="color: #1e40af; font-weight: 600; margin-bottom: 0.5rem;">📧 A confirmation email has been sent to ${booking.userEmail}</p>
-                        <p style="color: #1e40af; font-size: 0.875rem;">Please save this receipt for your records.</p>
-                    </div>
-                </div>
-            `;
-
-            currentBooking = null;
-        }
-
-        function renderMyBookings() {
-            const user = getCurrentUser();
-            if (!user) {
-                navigateTo('auth');
-                return;
-            }
-
-            const userBookings = getUserBookings(user.email);
-            const content = document.getElementById('bookingsList');
-
-            if (userBookings.length === 0) {
-                content.innerHTML = `
-                    <div style="text-align: center; padding: 3rem; background: white; border-radius: 0.5rem;">
-                        <div style="font-size: 4rem; margin-bottom: 1rem;">📅</div>
-                        <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">No bookings yet</h3>
-                        <p style="color: #6b7280; margin-bottom: 2rem;">Start planning your dream vacation at Baliraya Beach Resort!</p>
-                        <a href="#" onclick="navigateTo('browse-rooms'); return false;" class="btn btn-primary">Browse Rooms</a>
-                    </div>
-                `;
-                return;
-            }
-
-            // Sort bookings by date (newest first)
-            userBookings.sort((a, b) => new Date(b.bookingDate) - new Date(a.bookingDate));
-
-            content.innerHTML = `
-                <div style="margin-bottom: 2rem;">
-                    <h2 style="font-size: 1.5rem; font-weight: bold;">You have ${userBookings.length} booking${userBookings.length > 1 ? 's' : ''}</h2>
-                </div>
-                <div style="display: grid; gap: 1.5rem;">
-                    ${userBookings.map(booking => `
-                        <div class="booking-card">
-                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
-                                <div>
-                                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">${booking.roomName}</h3>
-                                    <p style="color: #6b7280; font-size: 0.875rem;">Booking ID: ${booking.id}</p>
-                                </div>
-                                <span class="booking-status status-${booking.status}">${booking.status.toUpperCase()}</span>
-                            </div>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
-                                <div>
-                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">Check-in</p>
-                                    <p style="font-weight: 600;">${new Date(booking.checkIn).toLocaleDateString()}</p>
-                                </div>
-                                <div>
-                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">Check-out</p>
-                                    <p style="font-weight: 600;">${new Date(booking.checkOut).toLocaleDateString()}</p>
-                                </div>
-                                <div>
-                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">Guests</p>
-                                    <p style="font-weight: 600;">${booking.guests} guest${booking.guests > 1 ? 's' : ''}</p>
-                                </div>
-                                <div>
-                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">Total</p>
-                                    <p style="font-weight: 600; color: #0284c7; font-size: 1.125rem;">₱${booking.totalPrice.toLocaleString()}</p>
-                                </div>
-                            </div>
-                            <div style="padding-top: 1rem; border-top: 1px solid #e5e7eb;">
-                                <p style="font-size: 0.875rem; color: #6b7280;">
-                                    Booked on ${new Date(booking.bookingDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                                </p>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-        }
-
-        // ==================== NAVIGATION ====================
-        function navigateTo(page) {
-            // Hide all pages
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-
-            // Show selected page
-            const pageElement = document.getElementById(page);
-            if (pageElement) {
-                pageElement.classList.add('active');
-            }
-
-            // Update nav links
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.dataset.page === page) {
-                    link.classList.add('active');
-                }
-            });
-
-            document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.dataset.page === page) {
-                    link.classList.add('active');
-                }
-            });
-
-            // Close mobile menu
-            document.getElementById('mobileMenu').classList.remove('active');
-
-            // Page-specific initialization
-            if (page === 'browse-rooms') {
-                renderRoomsList();
-            } else if (page === 'my-bookings') {
-                renderMyBookings();
-            }
-
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('active');
-        }
-
-        // ==================== LIGHTBOX ====================
-        function openLightbox(imageSrc) {
-            document.getElementById('lightboxImage').src = imageSrc;
-            document.getElementById('lightbox').classList.add('active');
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-
-        // ==================== FORM HANDLERS ====================
-        function handleContactSubmit(event) {
-            event.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            event.target.reset();
-        }
-
-        // ==================== INITIALIZATION ====================
-        document.addEventListener('DOMContentLoaded', function () {
-            // Set minimum dates for booking
-            const today = new Date().toISOString().split('T')[0];
-            const checkInInput = document.getElementById('browseCheckIn');
-            const checkOutInput = document.getElementById('browseCheckOut');
-
-            if (checkInInput) {
-                checkInInput.setAttribute('min', today);
-                checkInInput.value = today;
-
-                const tomorrow = new Date();
-                tomorrow.setDate(tomorrow.getDate() + 1);
-                checkOutInput.value = tomorrow.toISOString().split('T')[0];
-
-                checkInInput.addEventListener('change', function () {
-                    const checkInDate = new Date(this.value);
-                    checkInDate.setDate(checkInDate.getDate() + 1);
-                    const minCheckOut = checkInDate.toISOString().split('T')[0];
-                    checkOutInput.setAttribute('min', minCheckOut);
-                    if (new Date(checkOutInput.value) <= new Date(this.value)) {
-                        checkOutInput.value = minCheckOut;
-                    }
-                    renderRoomsList();
-                });
-
-                checkOutInput.addEventListener('change', renderRoomsList);
-                document.getElementById('browseGuests').addEventListener('change', renderRoomsList);
-            }
-
-            // Check if user is logged in
-            updateUIForLoggedInUser();
-        });
-    </script>
+  </section>
+
+  <!-- Wave: Amenities → Experiences -->
+  <div class="wave-sep" style="background:var(--teal-dk)">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,55 C300,8 900,76 1440,30 L1440,80 L0,80 Z" fill="#f0e6d4" />
+    </svg>
+  </div>
+
+  <!-- ═══════ EXPERIENCES ═══════ -->
+  <section class="experiences sec" id="experience">
+    <div class="wrap">
+      <div class="tc rv">
+        <span class="eyebrow">Moments You'll Carry Forever</span>
+        <h2 class="sec-title">This Is What Your Days —<br /><em>and Nights</em> — Feel Like</h2>
+        <p class="sec-sub" style="margin:1rem auto 0;max-width:560px">Words barely do it justice. But here's a glimpse
+          of what's waiting for you at Baliraya.</p>
+      </div>
+      <div class="exp-grid">
+        <div class="ec ec-wide rv d1">
+          <span class="ec-emoji">☀️</span>
+          <div>
+            <span class="ec-num">01 — Dawn</span>
+            <h3>Sunrise on Your Shoreline</h3>
+            <p>You wake up before the world does. The air is cool and salt-kissed, the sky painted in shades of amber
+              and rose. You step out to the lanai barefoot, coffee warming your hands, and watch as the sun lifts itself
+              from the Philippine Sea. No alarm. No rush. No agenda. Just this — the most beautiful commute you've ever
+              had.</p>
+          </div>
+        </div>
+        <div class="ec rv d2">
+          <span class="ec-emoji">🚣</span>
+          <span class="ec-num">02 — Adventure</span>
+          <h3>Kayak for Two</h3>
+          <p>A two-person kayak, an open sea, and the person you love most. Together you push through the gentle morning
+            waves, leaving every worry behind on the shore. The only thing ahead of you is the horizon.</p>
+        </div>
+        <div class="ec ec-wide rv d1">
+          <span class="ec-emoji">🔥</span>
+          <div>
+            <span class="ec-num">03 — Evening Magic</span>
+            <h3>Bonfire Under the Stars</h3>
+            <p>As the sun drops into the sea and the sky turns deep indigo, the bonfire crackles to life. Warm amber
+              glow, the smell of salt and woodsmoke, the sound of laughter echoing down the shore — this is the evening
+              that will come up in conversations for years. Someone tells a story. Everyone stays up far too late.
+              Nobody minds.</p>
+          </div>
+        </div>
+        <div class="ec rv d2">
+          <span class="ec-emoji">🌊</span>
+          <span class="ec-num">04 — Stillness</span>
+          <h3>Do Absolutely Nothing</h3>
+          <p>The most profound Baliraya moments require no plans. You sink into the swing, the warm breeze carrying the
+            scent of the ocean, and you simply breathe. Nowhere to be. Nothing to do. This is what rest actually feels
+            like.</p>
+        </div>
+        <div class="ec ec-wide rv d1">
+          <span class="ec-emoji">✨</span>
+          <div>
+            <span class="ec-num">05 — Night Sky</span>
+            <h3>Stargazing from the Treehouse</h3>
+            <p>Far from the glow of city lights, the Lawigan sky reveals itself as a different universe entirely. From
+              the elevated perch of the Treehouse, the Milky Way stretches overhead in full, breathtaking clarity.
+              You'll stay up far too late — and won't regret a single second. This is the kind of wonder that reminds
+              you exactly why you needed to get away.</p>
+          </div>
+        </div>
+        <div class="ec rv d2">
+          <span class="ec-emoji">🎤</span>
+          <span class="ec-num">06 — Celebration</span>
+          <h3>Your Private Concert Night</h3>
+          <p>Stars out. Someone picks up the mic. Suddenly Baliraya becomes your own private concert venue — open sky,
+            sea as your chorus, and a crowd of the people you love most. Belt it out. Nobody's judging here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: Experiences → Offer -->
+  <div class="wave-sep" style="background:var(--sand-lt)">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C480,80 960,0 1440,55 L1440,80 L0,80 Z" fill="#c8614a" />
+    </svg>
+  </div>
+
+  <!-- ═══════ OFFER BANNER ═══════ -->
+  <section class="offer">
+    <span class="offer-big">20%</span>
+    <div class="offer-inner wrap">
+      <span class="offer-pill">🌊 Limited Time · Exclusive Offer</span>
+      <h2>Stay Two Nights.<br />Save Even More.</h2>
+      <p>Because one night at Baliraya is never quite enough, your second night comes at an exclusive <strong>20%
+          discount</strong> — automatically. More sunrises. More bonfires. More of exactly this.</p>
+      <a href="#book" class="btn-white">Claim Your 2nd-Night Discount →</a>
+    </div>
+  </section>
+
+  <!-- Wave: Offer → Testimonials -->
+  <div class="wave-sep" style="background:var(--coral)">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,28 C480,80 960,18 1440,62 L1440,80 L0,80 Z" fill="#faf5ec" />
+    </svg>
+  </div>
+
+  <!-- ═══════ TESTIMONIALS ═══════ -->
+  <!-- NOTE: Reviews from Evameah Anquiles and Paul Montejo are real Google reviews.
+     The remaining four are representative placeholder testimonials to be replaced with real guest reviews. -->
+  <section class="testimonials sec">
+    <div class="wrap">
+      <div class="tc rv">
+        <span class="eyebrow">What Our Guests Are Saying</span>
+        <h2 class="sec-title">They Came for the Beach.<br /><em>They Stayed for Everything Else.</em></h2>
+      </div>
+      <div class="testi-grid">
+        <div class="tc-card feat rv d1">
+          <span class="tc-ver">✓ Google Verified</span>
+          <span class="tc-stars">★★★★★</span>
+          <p class="tc-quote">"Very relaxing place. Good ambiance and clean area. Will be back soon!"</p>
+          <div class="tc-author">
+            <div class="tc-av">E</div>
+            <div><span class="tc-name">Evameah A.</span><span class="tc-meta">Google Review · 5 Photos</span></div>
+          </div>
+        </div>
+        <div class="tc-card rv d2">
+          <span class="tc-ver">✓ Google Verified</span>
+          <span class="tc-stars">★★★★★</span>
+          <p class="tc-quote">"Clean and friendly staff. The whole experience was warm from the moment we arrived."</p>
+          <div class="tc-author">
+            <div class="tc-av">P</div>
+            <div><span class="tc-name">Paul M.</span><span class="tc-meta">Google Review</span></div>
+          </div>
+        </div>
+        <div class="tc-card rv d3">
+          <span class="tc-stars">★★★★★</span>
+          <p class="tc-quote">"We came for a quick overnight and ended up staying two nights. The treehouse view alone
+            was worth every peso. It really does feel like your own private piece of Bali — right here in Davao
+            Oriental."</p>
+          <div class="tc-author">
+            <div class="tc-av">M</div>
+            <div><span class="tc-name">Maria C.</span><span class="tc-meta">Davao City · Couples Getaway</span></div>
+          </div>
+        </div>
+        <div class="tc-card rv d1">
+          <span class="tc-stars">★★★★★</span>
+          <p class="tc-quote">"The bonfire by the beach at night was magical. Everything was spotless — the vibe was
+            exactly what we needed after months of deadlines. Baliraya is our annual reset now."</p>
+          <div class="tc-author">
+            <div class="tc-av">R</div>
+            <div><span class="tc-name">Raffy &amp; Diane V.</span><span class="tc-meta">Couples Retreat</span></div>
+          </div>
+        </div>
+        <div class="tc-card feat rv d2">
+          <span class="tc-stars">★★★★★</span>
+          <p class="tc-quote">"We brought our family of 8 and had the entire resort to ourselves. The kids loved the
+            mini pool and the kayak. We loved the peace. A perfectly hidden gem in Mati — one we're not ready to share."
+          </p>
+          <div class="tc-author">
+            <div class="tc-av">R</div>
+            <div><span class="tc-name">The Reyes Family</span><span class="tc-meta">Family Getaway</span></div>
+          </div>
+        </div>
+        <div class="tc-card rv d3">
+          <span class="tc-stars">★★★★★</span>
+          <p class="tc-quote">"I've been to Bali three times. Baliraya gave me the exact same feeling — that deep, quiet
+            sense of being somewhere truly beautiful, with the people you love most. That's rare."</p>
+          <div class="tc-author">
+            <div class="tc-av">J</div>
+            <div><span class="tc-name">Janine L.</span><span class="tc-meta">Solo Traveler &amp; Regular Guest</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: Testimonials → Rates -->
+  <div class="wave-sep" style="background:var(--cream)">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,58 C360,12 1080,74 1440,32 L1440,80 L0,80 Z" fill="#f0e6d4" />
+    </svg>
+  </div>
+
+  <!-- ═══════ RATES ═══════ -->
+  <section class="rates sec" id="rates">
+    <div class="wrap">
+      <div class="tc rv">
+        <span class="eyebrow">Reserve Your Escape</span>
+        <h2 class="sec-title">Transparent Pricing,<br /><em>Total Exclusivity</em></h2>
+        <p class="sec-sub" style="margin:1rem auto 0;max-width:560px">Baliraya is available for exclusive booking only —
+          the entire resort belongs to your group. Good for 25–30 pax with parking for 4–5 cars.</p>
+      </div>
+      <div class="rate-grid">
+        <div class="rc rv d1">
+          <span class="rc-type">Day Tour</span>
+          <h3 class="rc-title">Day Escape</h3>
+          <p class="rc-sub">Perfect for a full day of sun, sand, and sea. From morning arrival to sunset send-off.</p>
+          <ul class="rc-feats">
+            <li><span class="rc-check">✓</span> Full resort exclusive access</li>
+            <li><span class="rc-check">✓</span> White sand beach, all day</li>
+            <li><span class="rc-check">✓</span> Mini pool, kayak &amp; swings</li>
+            <li><span class="rc-check">✓</span> Beach volleyball &amp; badminton</li>
+            <li><span class="rc-check">✓</span> Bonfire &amp; Gazebo access</li>
+            <li><span class="rc-check">✓</span> Good for 25–30 pax</li>
+          </ul>
+          <a href="#book" class="btn-teal">Inquire for Day Tour Rate</a>
+        </div>
+        <div class="rc feat rv d2">
+          <span class="rc-badge">Most Popular</span>
+          <span class="rc-type">Overnight Stay</span>
+          <h3 class="rc-title">One Night Escape</h3>
+          <p class="rc-sub">From sunset to sunrise — the full Baliraya experience, bonfire under the stars included.</p>
+          <ul class="rc-feats">
+            <li><span class="rc-check">✓</span> Full resort exclusive access</li>
+            <li><span class="rc-check">✓</span> 2-bedroom air-conditioned house</li>
+            <li><span class="rc-check">✓</span> Treehouse &amp; Gazebo access</li>
+            <li><span class="rc-check">✓</span> All activities &amp; amenities</li>
+            <li><span class="rc-check">✓</span> Generator &amp; back-up power</li>
+            <li><span class="rc-check">✓</span> Good for 25–30 pax</li>
+          </ul>
+          <a href="#book" class="btn-ol-lt">Inquire for Overnight Rate</a>
+        </div>
+        <div class="rc rv d3">
+          <span class="rc-type">Two Nights</span>
+          <h3 class="rc-title">Extended Getaway</h3>
+          <p class="rc-sub">Two nights of pure bliss — your second night comes at an exclusive 20% discount.</p>
+          <ul class="rc-feats">
+            <li><span class="rc-check">✓</span> Everything in Overnight package</li>
+            <li><span class="rc-check">✓</span> <strong>20% off on 2nd night</strong></li>
+            <li><span class="rc-check">✓</span> Extra sunrise &amp; sunset</li>
+            <li><span class="rc-check">✓</span> More bonfire evenings</li>
+            <li><span class="rc-check">✓</span> Full relaxation, twice over</li>
+            <li><span class="rc-check">✓</span> Good for 25–30 pax</li>
+          </ul>
+          <a href="#book" class="btn-teal">Claim Your 20% Discount</a>
+        </div>
+      </div>
+      <p class="rv" style="text-align:center;font-size:.79rem;color:var(--muted);margin-top:1.9rem">* Rates are seasonal
+        and subject to change. Contact us directly via Facebook or call/text for current pricing and availability.</p>
+    </div>
+  </section>
+
+  <!-- Wave: Rates → Booking CTA -->
+  <div class="wave-sep" style="background:var(--sand-lt)">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C600,82 840,8 1440,55 L1440,80 L0,80 Z" fill="#0b3a3a" />
+    </svg>
+  </div>
+
+  <!-- ═══════ BOOKING CTA ═══════ -->
+  <section class="book-cta" id="book">
+    <div class="wrap book-cta-inner">
+      <div class="rv">
+        <span class="eyebrow eyebrow--lt">One Message Away</span>
+        <h2>Your Escape Is<br /><em>Already Waiting</em></h2>
+        <p>Stop scrolling. Start planning. Your people deserve a proper reset — somewhere the sea whispers your name and
+          the stars fill the whole sky. Baliraya is ready when you are.</p>
+      </div>
+      <div class="contact-cards rv d2">
+        <a href="https://www.facebook.com/p/Baliraya-Beach-Resort-100076149743277/" target="_blank" rel="noopener"
+          class="cc">
+          <span class="cc-icon">💬</span>
+          <span class="cc-lbl">Message Us</span>
+          <span class="cc-val">Facebook Page</span>
+        </a>
+        <a href="tel:09158518560" class="cc">
+          <span class="cc-icon">📞</span>
+          <span class="cc-lbl">Call or Text</span>
+          <span class="cc-val">0915 851 8560</span>
+        </a>
+        <a href="https://goo.gl/maps/baliraya" target="_blank" rel="noopener" class="cc">
+          <span class="cc-icon">📍</span>
+          <span class="cc-lbl">Find Us</span>
+          <span class="cc-val">Purok Bayanihan, Lawigan</span>
+        </a>
+      </div>
+      <div class="rv d3" style="display:flex;justify-content:center">
+        <a href="https://www.facebook.com/p/Baliraya-Beach-Resort-100076149743277/" target="_blank" rel="noopener"
+          class="btn-gold">Book via Facebook →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <div class="foot-logo"><span class="sc">❧</span> BALIRAYA</div>
+          <p class="foot-tagline">A tropical paradise where Bali meets Mati.</p>
+          <p>An exclusive, Bali-inspired beach resort on the pristine white sand shores of Lawigan, at the southeastern
+            tip of Mati City, Davao Oriental. Where the sea always keeps your name.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#experience">Experiences</a></li>
+            <li><a href="#rates">Rates</a></li>
+            <li><a href="#book">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Get In Touch</h4>
+          <div class="f-contact"><span class="ico">📍</span><span>Purok Bayanihan, Barangay Lawigan, Mati City, Davao
+              Oriental</span></div>
+          <div class="f-contact"><span class="ico">📞</span><span>0915 851 8560</span></div>
+          <div class="f-contact"><span class="ico">💬</span><span>facebook.com/BalirayaBeachResort</span></div>
+          <div class="f-contact"><span class="ico">🕐</span><span>Open Daily · By Reservation Only</span></div>
+        </div>
+      </div>
+      <div class="foot-bot">
+        <p>© 2025 Baliraya Beach Resort · All rights reserved · Mati City, Davao Oriental, Philippines</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/p/Baliraya-Beach-Resort-100076149743277/" target="_blank" rel="noopener"
+            class="soc" title="Facebook">f</a>
+          <a href="#" class="soc" title="Instagram">♡</a>
+          <a href="#" class="soc" title="TikTok">♪</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════ FLOAT CTA ═══════ -->
+  <a href="#book" class="float-cta" id="floatCta"><span class="float-dot"></span>Book Now</a>
+
+  <!-- ═══════ SCRIPTS ═══════ -->
+  <script>
+    const nav = document.getElementById('nav');
+    const floatCta = document.getElementById('floatCta');
+    const burger = document.getElementById('burger');
+    const mob = document.getElementById('mob');
+    const mobX = document.getElementById('mobX');
+
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY;
+      nav.classList.toggle('on', s > 60);
+      floatCta.classList.toggle('show', s > 400);
+    }, { passive: true });
+
+    burger.addEventListener('click', () => mob.classList.add('open'));
+    mobX.addEventListener('click', cMob);
+    function cMob() { mob.classList.remove('open') }
+
+    const rvEls = document.querySelectorAll('.rv');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target) }
+      });
+    }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+    rvEls.forEach(el => obs.observe(el));
+  </script>
 </body>
 
 </html>
